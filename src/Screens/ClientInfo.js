@@ -1,8 +1,10 @@
 // import background from "../Images/contact-background.jpeg";
+import Navbar from "../Components/Navbar";
 
 const ClientInfo = () => {
   return (
     <>
+      <Navbar />
       <form>
         <h1>Client Information</h1>
         <div className="txtb">
@@ -10,12 +12,12 @@ const ClientInfo = () => {
           <input type="text" name="" required />
         </div>
 
-        {/* <div className="txtb">
+        <div className="txtb">
           <label>Gender</label>
           <input type="radio" value="Male" name="gender" /> Male
           <input type="radio" value="Female" name="gender" /> Female
           <input type="radio" value="Other" name="gender" /> Other
-        </div> */}
+        </div>
 
         <div className="txtb">
           <label>D.O.B.</label>
