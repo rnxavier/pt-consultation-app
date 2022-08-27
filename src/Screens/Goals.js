@@ -1,8 +1,10 @@
 // import background from "../Images/contact-background.jpeg";
+import Navbar from "../Components/Navbar";
 
 const Goals = () => {
   return (
     <>
+      <Navbar />
       <form>
         <h1>Client Goals</h1>
 

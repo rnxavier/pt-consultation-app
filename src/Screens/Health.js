@@ -1,8 +1,10 @@
 // import background from "../Images/contact-background.jpeg";
+import Navbar from "../Components/Navbar";
 
 const Health = () => {
   return (
     <>
+      <Navbar />
       <form>
         <h1>Client Health &amp; Injuries</h1>
 

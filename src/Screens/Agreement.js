@@ -1,4 +1,5 @@
 // import background from "../Images/contact-background.jpeg";
+import Navbar from "../Components/Navbar";
 
 const Agreement = () => {
   const current = new Date();
@@ -8,6 +9,7 @@ const Agreement = () => {
 
   return (
     <>
+      <Navbar />
       <div className="agreement-div">
         <h1>Agreement</h1>
 
