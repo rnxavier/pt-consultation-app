@@ -64,6 +64,13 @@ form h1{
   box-shadow: 0 0 10px #808080;
 }
 
+
+.submit-btn-text {
+  font-weight: 700;
+  font-size: 150%;
+  
+}
+
 .btn-text {
  font-weight: 700;
  font-size: 150%;

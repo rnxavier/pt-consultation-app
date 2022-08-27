@@ -24,7 +24,7 @@ const Navbar = () => {
             <MenuLink href="/goals">Goals</MenuLink>
             <MenuLink href="/health">Health</MenuLink>
             <MenuLink href="/agreement">Agreement</MenuLink>
-            <MenuLink href="/measurement">Measurements</MenuLink>
+            <MenuLink href="/measurements">Measurements</MenuLink>
           </Menu>
         </Nav>
       </div>
