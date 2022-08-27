@@ -44,7 +44,8 @@ const ClientInfo = () => {
 
         <div className="single-button-div">
           <a className="button" href="/goals">
-            Next
+            <div className="btn-text">Next</div>
+            <div className="btn-subtext">Client Goals</div>
           </a>
         </div>
       </form>

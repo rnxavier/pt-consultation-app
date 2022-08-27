@@ -110,11 +110,13 @@ const Health = () => {
 
         <div className="button-div">
           <a className="button" href="/goals">
-            Previous
+            <div className="btn-text">Previous</div>
+            <div className="btn-subtext">Client Goals</div>
           </a>
 
-          <a className="button" href="/goals">
-            Next
+          <a className="button" href="/agreement">
+            <div className="btn-text">Next</div>
+            <div className="btn-subtext">Agreement</div>
           </a>
         </div>
       </form>

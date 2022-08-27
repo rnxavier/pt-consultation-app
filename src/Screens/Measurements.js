@@ -1,10 +1,10 @@
 // import background from "../Images/contact-background.jpeg";
 
-const Goals = () => {
+const Measurements = () => {
   return (
     <>
       <form>
-        <h1>Client Goals</h1>
+        <h1>Client Measurements</h1>
 
         <div className="txtb">
           <label>What are your main goals for this exercise program?</label>
@@ -71,9 +71,9 @@ const Goals = () => {
         </div>
 
         <div className="button-div">
-          <a className="button" href="/">
+          <a className="button" href="/agreement">
             <div className="btn-text">Previous</div>
-            <div className="btn-subtext">Client Information</div>
+            <div className="btn-subtext">Agreement</div>
           </a>
 
           <a className="button" href="/health">
@@ -86,4 +86,4 @@ const Goals = () => {
   );
 };
 
-export default Goals;
+export default Measurements;
