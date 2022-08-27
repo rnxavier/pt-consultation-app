@@ -57,5 +57,26 @@ form h1{
   border-radius: 8px;
   border: #66D3FA;
   text-decoration: none;
+  box-shadow: 0 0 10px #808080;
+}
+
+.btn-text {
+ font-weight: 700;
+ font-size: 150%;
+}
+
+.btn-subtext {
+  font-size: 80%;
+}
+
+.agreement-div {
+  width: 85%;
+  background: rgb(255, 255, 255, 0.9);
+  padding: 50px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000000b3;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
