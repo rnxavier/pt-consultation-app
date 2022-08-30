@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 const Health = ({ formData, setFormData }) => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <form>
         <h1>Client Health &amp; Injuries</h1>
 

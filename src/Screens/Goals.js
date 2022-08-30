@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 const Goals = ({ formData, setFormData }) => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <form>
         <h1>Client Goals</h1>
 

@@ -9,7 +9,7 @@ const Agreement = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="agreement-div">
         <h1>Agreement</h1>
 
