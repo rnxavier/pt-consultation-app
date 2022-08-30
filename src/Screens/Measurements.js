@@ -58,7 +58,7 @@ const Measurements = () => {
           <input type="text" name="" />
         </div>
 
-        <div className="button-div">
+        {/* <div className="button-div">
           <a className="button" href="/agreement">
             <div className="btn-text">Previous</div>
             <div className="btn-subtext">Agreement</div>
@@ -67,7 +67,7 @@ const Measurements = () => {
           <a className="button" href="/agreement">
             <div className="submit-btn-text">Submit</div>
           </a>
-        </div>
+        </div> */}
       </form>
     </>
   );

@@ -4,7 +4,7 @@
 
 
 
-form {
+.form {
   width: 85%;
   background: rgb(255, 255, 255, 0.9);
   padding: 50px 40px;
@@ -62,6 +62,7 @@ form h1{
   border: #66D3FA;
   text-decoration: none;
   box-shadow: 0 0 10px #808080;
+  text-align: left;
 }
 
 
@@ -77,7 +78,7 @@ form h1{
 }
 
 .btn-subtext {
-  font-size: 80%;
+  font-size: 100%;
 }
 
 .agreement-div {

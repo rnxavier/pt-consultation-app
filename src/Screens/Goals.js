@@ -72,7 +72,7 @@ const Goals = () => {
           <input type="text" name="" required />
         </div>
 
-        <div className="button-div">
+        {/* <div className="button-div">
           <a className="button" href="/">
             <div className="btn-text">Previous</div>
             <div className="btn-subtext">Client Information</div>
@@ -82,7 +82,7 @@ const Goals = () => {
             <div className="btn-text">Next</div>
             <div className="btn-subtext">Client Health</div>
           </a>
-        </div>
+        </div> */}
       </form>
     </>
   );
