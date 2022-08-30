@@ -25,17 +25,29 @@ const Form = () => {
     barriers: "",
     help: "",
     heartCon: "",
+    heartConComments: "",
     chestCon: "",
+    chestConComments: "",
     diabetes: "",
+    diabetesComments: "",
     epilepsy: "",
+    epilepsyComments: "",
     muscleCon: "",
+    muscleComments: "",
     neckCon: "",
+    neckComments: "",
     bloodPressure: "",
+    bloodPressureComments: "",
     dizziness: "",
+    dizzinessComments: "",
     pregnancy: "",
+    pregnancyComments: "",
     majorOps: "",
+    majorOpsComments: "",
     medication: "",
+    medicationComments: "",
     temp: "",
+    tempComments: "",
     covid: "",
     covidDate: "",
     height: "",
@@ -122,16 +134,17 @@ const Form = () => {
       case 4:
         return (
           <div className="button-div">
-            <button className="button">
+            <button
+              className="button"
+              onClick={() => {
+                setPage((currentPage) => currentPage - 1);
+              }}
+            >
               <div className="btn-text">Previous</div>
               <div className="btn-subtext">{formTitles[page - 1]}</div>
             </button>
 
-            <button
-              className="button"
-              type="submit"
-              onClick={console.log("clicked!")}
-            >
+            <button className="button" type="submit" onClick={handleSubmit}>
               <div className="submit-btn-text">Submit</div>
             </button>
           </div>
@@ -369,10 +382,10 @@ const Form = () => {
   return (
     <div className="form">
       <Navbar />
-      <form className="form-container" onSubmit={handleSubmit}>
+      <div className="form-container">
         <div className="body">{pageDisplay()}</div>
         <div className="footer">{buttonDisplay()}</div>
-      </form>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 // import background from "../Images/contact-background.jpeg";
-import Navbar from "../Components/Navbar";
 
 const Measurements = ({ formData, setFormData }) => {
   return (

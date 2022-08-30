@@ -1,7 +1,11 @@
 // import background from "../Images/contact-background.jpeg";
-import Navbar from "../Components/Navbar";
 
 const ClientInfo = ({ formData, setFormData }) => {
+  const handleRadio = (e) => {
+    const { name } = e.target;
+    setFormData({ ...formData, [name]: e.target.value });
+  };
+
   return (
     <>
       {/* <Navbar /> */}
@@ -22,9 +26,30 @@ const ClientInfo = ({ formData, setFormData }) => {
 
         <div className="txtb">
           <label>Gender</label>
-          <input type="radio" value="Male" name="gender" /> Male
-          <input type="radio" value="Female" name="gender" /> Female
-          <input type="radio" value="Other" name="gender" /> Other
+          <input
+            type="radio"
+            value="Male"
+            name="gender"
+            onChange={handleRadio}
+            checked={formData.gender}
+          />{" "}
+          Male
+          <input
+            type="radio"
+            value="Female"
+            name="gender"
+            onChange={handleRadio}
+            checked={formData.gender}
+          />{" "}
+          Female
+          <input
+            type="radio"
+            value="Other"
+            name="gender"
+            onChange={handleRadio}
+            checked={formData.gender}
+          />{" "}
+          Other
         </div>
 
         <div className="txtb">
