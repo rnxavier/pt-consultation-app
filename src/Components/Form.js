@@ -13,6 +13,29 @@ const Form = () => {
     dob: "",
     contactNo: "",
     email: "",
+    emergencyContact: "",
+    emergencyNo: "",
+    goals: "",
+    bodyParts: "",
+    resultsTime: "",
+    knowledge: "",
+    motivation: "",
+    barriers: "",
+    help: "",
+    heartCon: "",
+    chestCon: "",
+    diabetes: "",
+    epilepsy: "",
+    muscleCon: "",
+    neckCon: "",
+    bloodPressure: "",
+    dizziness: "",
+    pregnancy: "",
+    majorOps: "",
+    medication: "",
+    temp: "",
+    covid: "",
+    covidDate: "",
     height: "",
     weight: "",
     bodyFat: "",
@@ -38,15 +61,15 @@ const Form = () => {
   const pageDisplay = () => {
     switch (page) {
       case 0:
-        return <ClientInfo />;
+        return <ClientInfo formData={formData} setFormData={setFormData} />;
       case 1:
-        return <Goals />;
+        return <Goals formData={formData} setFormData={setFormData} />;
       case 2:
-        return <Health />;
+        return <Health formData={formData} setFormData={setFormData} />;
       case 3:
         return <Agreement />;
       case 4:
-        return <Measurements />;
+        return <Measurements formData={formData} setFormData={setFormData} />;
     }
   };
 
