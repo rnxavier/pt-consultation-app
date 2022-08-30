@@ -27,72 +27,150 @@ const Health = ({ formData, setFormData }) => {
             type="radio"
             value="Yes"
             name="heartCon"
-            checked={formData.heartCon}
             onChange={handleRadio}
+            checked={formData.heartCon === "Yes"}
           />
           Yes
           <input
             type="radio"
             value="No"
             name="heartCon"
-            checked={formData.heartCon}
             onChange={handleRadio}
+            checked={formData.heartCon === "No"}
           />
           No
           <label>Comments</label>
           <input type="text" name="heartConComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>Chest pain at rest or whilst exercising</label>
           <input
             type="radio"
             value="Yes"
             name="chestCon"
-            checked={formData.chestCon}
+            onChange={handleRadio}
+            checked={formData.chestCon === "Yes"}
           />{" "}
           Yes
           <input
             type="radio"
             value="No"
             name="chestCon"
-            checked={formData.chestCon}
+            onChange={handleRadio}
+            checked={formData.chestCon === "No"}
           />{" "}
           No
           <label>Comments</label>
           <input type="text" name="chestConComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>Diabetes</label>
-          <input type="radio" value="Yes" name="diabetes" /> Yes
-          <input type="radio" value="No" name="diabetes" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="diabetes"
+            onChange={handleRadio}
+            checked={formData.diabetes === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="diabetes"
+            onChange={handleRadio}
+            checked={formData.diabetes === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="diabetesComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>Epilepsy</label>
-          <input type="radio" value="Yes" name="epilepsy" /> Yes
-          <input type="radio" value="No" name="epilepsy" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="epilepsy"
+            onChange={handleRadio}
+            checked={formData.epilepsy === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="epilepsy"
+            onChange={handleRadio}
+            checked={formData.epilepsy === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="epilepsyComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>Muscle/joint condition or injury</label>
-          <input type="radio" value="Yes" name="muscleCon" /> Yes
-          <input type="radio" value="No" name="muscleCon" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="muscleCon"
+            onChange={handleRadio}
+            checked={formData.muscleCon === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="muscleCon"
+            onChange={handleRadio}
+            checked={formData.muscleCon === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="muscleComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>Neck/back condition or injury</label>
-          <input type="radio" value="Yes" name="neckCon" /> Yes
-          <input type="radio" value="No" name="neckCon" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="neckCon"
+            onChange={handleRadio}
+            checked={formData.neckCon === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="neckCon"
+            onChange={handleRadio}
+            checked={formData.neckCon === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="neckComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>High/low blood pressure</label>
-          <input type="radio" value="Yes" name="bloodPressure" /> Yes
-          <input type="radio" value="No" name="bloodPressure" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="bloodPressure"
+            onChange={handleRadio}
+            checked={formData.bloodPressure === "No"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="bloodPressure"
+            onChange={handleRadio}
+            checked={formData.bloodPressure === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input
             type="text"
@@ -100,50 +178,138 @@ const Health = ({ formData, setFormData }) => {
             onChange={handleText}
           />
         </div>
+
         <div className="txtb">
           <label>
             Dizziness/loss of consciousness at rest or whilst exercising
           </label>
-          <input type="radio" value="Yes" name="dizziness" /> Yes
-          <input type="radio" value="No" name="dizziness" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="dizziness"
+            onChange={handleRadio}
+            checked={formData.dizziness === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="dizziness"
+            onChange={handleRadio}
+            checked={formData.dizziness === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="dizzinessComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>Pregnancy/recently given birth</label>
-          <input type="radio" value="Yes" name="pregnancy" /> Yes
-          <input type="radio" value="No" name="pregnancy" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="pregnancy"
+            onChange={handleRadio}
+            checked={formData.pregnancy === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="pregnancy"
+            onChange={handleRadio}
+            checked={formData.pregnancy === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="pregnancyComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>Major operations</label>
-          <input type="radio" value="Yes" name="majorOps" /> Yes
-          <input type="radio" value="No" name="majorOps" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="majorOps"
+            onChange={handleRadio}
+            checked={formData.majorOps === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="majorOps"
+            onChange={handleRadio}
+            checked={formData.majorOps === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="majorOpsComments" onChange={handleText} />
         </div>
+
         <div className="txtb">
           <label>
             Currently taking medication&#40;s&#41; which affects ability to
             exercise safely
           </label>
-          <input type="radio" value="Yes" name="medication" /> Yes
-          <input type="radio" value="No" name="medication" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="medication"
+            onChange={handleRadio}
+            checked={formData.medication === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="medication"
+            onChange={handleRadio}
+            checked={formData.medication === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="medicationComments" onChange={handleText} />
         </div>
         <div className="txtb">
           <label>Temperature &gt; 38&#176;C</label>
-          <input type="radio" value="Yes" name="temp" /> Yes
-          <input type="radio" value="No" name="temp" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="temp"
+            onChange={handleRadio}
+            checked={formData.temp === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="temp"
+            onChange={handleRadio}
+            checked={formData.temp === "No"}
+          />{" "}
+          No
           <label>Comments</label>
           <input type="text" name="tempComments" onChange={handleText} />
         </div>
         <div className="txtb">
           <label>Have you ever contracted COVID-19?</label>
-          <input type="radio" value="Yes" name="covid" /> Yes
-          <input type="radio" value="No" name="covid" /> No
+          <input
+            type="radio"
+            value="Yes"
+            name="covid"
+            onChange={handleRadio}
+            checked={formData.covid === "Yes"}
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            value="No"
+            name="covid"
+            onChange={handleRadio}
+            checked={formData.covid === "No"}
+          />{" "}
+          No
           <label>If yes, when?</label>
           <input
             type="text"

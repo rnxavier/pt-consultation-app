@@ -31,7 +31,7 @@ const ClientInfo = ({ formData, setFormData }) => {
             value="Male"
             name="gender"
             onChange={handleRadio}
-            checked={formData.gender}
+            checked={formData.gender === "Male"}
           />{" "}
           Male
           <input
@@ -39,7 +39,7 @@ const ClientInfo = ({ formData, setFormData }) => {
             value="Female"
             name="gender"
             onChange={handleRadio}
-            checked={formData.gender}
+            checked={formData.gender === "Female"}
           />{" "}
           Female
           <input
@@ -47,7 +47,7 @@ const ClientInfo = ({ formData, setFormData }) => {
             value="Other"
             name="gender"
             onChange={handleRadio}
-            checked={formData.gender}
+            checked={formData.gender === "Other"}
           />{" "}
           Other
         </div>
