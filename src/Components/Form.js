@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Clients from "../Screens/Clients";
 import ClientInfo from "../Screens/ClientInfo";
 import Goals from "../Screens/Goals";
 import Health from "../Screens/Health";
@@ -70,6 +71,7 @@ const Form = () => {
     "Client Health",
     "Agreement",
     "Client Measurements",
+    "Clients",
   ];
 
   const pageDisplay = () => {
@@ -84,6 +86,8 @@ const Form = () => {
         return <Agreement />;
       case 4:
         return <Measurements formData={formData} setFormData={setFormData} />;
+      case 5:
+        return <Clients />;
     }
   };
 
@@ -171,6 +175,14 @@ const Form = () => {
               <span />
             </Hamburger>
             <Menu isOpen={isOpen}>
+              <MenuLink
+                href=""
+                onClick={() => {
+                  setPage(5);
+                }}
+              >
+                Clients
+              </MenuLink>
               <MenuLink
                 href=""
                 onClick={() => {

@@ -1,6 +1,3 @@
-// import background from "../Images/contact-background.jpeg";
-import { useState } from "react";
-
 const Goals = ({ formData, setFormData }) => {
   const handleCheckbox = (e) => {
     setFormData({ ...formData, goals: e.target.value });
