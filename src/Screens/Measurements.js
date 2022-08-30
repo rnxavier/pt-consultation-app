@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 const Measurements = ({ formData, setFormData }) => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <form>
         <h1>Client's First Measurements</h1>
 
