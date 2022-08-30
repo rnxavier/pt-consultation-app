@@ -44,12 +44,12 @@ const ClientInfo = () => {
           <input type="text" name="" required />
         </div>
 
-        <div className="single-button-div">
+        {/* <div className="single-button-div">
           <a className="button" href="/goals">
             <div className="btn-text">Next</div>
             <div className="btn-subtext">Client Goals</div>
           </a>
-        </div>
+        </div> */}
       </form>
     </>
   );

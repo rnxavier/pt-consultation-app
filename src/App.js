@@ -6,18 +6,20 @@ import Goals from "./Screens/Goals";
 import Health from "./Screens/Health";
 import Agreement from "./Screens/Agreement";
 import Measurements from "./Screens/Measurements";
+import Form from "./Components/Form";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<ClientInfo />} />
-        <Route path="/goals" element={<Goals />} />
-        <Route path="/health" element={<Health />} />
-        <Route path="/agreement" element={<Agreement />} />
-        <Route path="/measurements" element={<Measurements />} />
-      </Routes>
-    </Router>
+    <Form />
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<ClientInfo />} />
+    //     <Route path="/goals" element={<Goals />} />
+    //     <Route path="/health" element={<Health />} />
+    //     <Route path="/agreement" element={<Agreement />} />
+    //     <Route path="/measurements" element={<Measurements />} />
+    //   </Routes>
+    // </Router>
   );
 }
 

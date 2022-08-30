@@ -110,7 +110,7 @@ const Health = () => {
           <input type="text" name="" />
         </div>
 
-        <div className="button-div">
+        {/* <div className="button-div">
           <a className="button" href="/goals">
             <div className="btn-text">Previous</div>
             <div className="btn-subtext">Client Goals</div>
@@ -120,7 +120,7 @@ const Health = () => {
             <div className="btn-text">Next</div>
             <div className="btn-subtext">Agreement</div>
           </a>
-        </div>
+        </div> */}
       </form>
     </>
   );

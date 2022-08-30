@@ -120,7 +120,7 @@ const Agreement = () => {
 
         <span>Date signed: {date}</span>
 
-        <div className="button-div">
+        {/* <div className="button-div">
           <a className="button" href="/goals">
             <div className="btn-text">Previous</div>
             <div className="btn-subtext">Client Goals</div>
@@ -130,7 +130,7 @@ const Agreement = () => {
             <div className="btn-text">Next</div>
             <div className="btn-subtext">Measurements</div>
           </a>
-        </div>
+        </div> */}
       </div>
     </>
   );
