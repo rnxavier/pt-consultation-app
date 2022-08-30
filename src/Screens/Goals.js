@@ -227,7 +227,15 @@ const Goals = ({ formData, setFormData }) => {
 
         <div className="txtb">
           <label>How can we help you?</label>
-          <input type="text" name="" required />
+          <input
+            type="text"
+            name=""
+            value={formData.help}
+            onChange={(e) => {
+              setFormData({ ...formData, help: e.target.value });
+            }}
+            required
+          />
         </div>
 
         {/* <div className="button-div">
