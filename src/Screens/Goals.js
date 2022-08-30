@@ -1,7 +1,7 @@
 // import background from "../Images/contact-background.jpeg";
 import Navbar from "../Components/Navbar";
 
-const Goals = () => {
+const Goals = ({ formData, setFormData }) => {
   return (
     <>
       <Navbar />
@@ -57,14 +57,30 @@ const Goals = () => {
 
         <div className="txtb">
           <label>What will motivate you to achieve your goals?</label>
-          <input type="text" name="" required />
+          <input
+            type="text"
+            name=""
+            value={formData.motivation}
+            onChange={(e) => {
+              setFormData({ ...formData, motivation: e.target.value });
+            }}
+            required
+          />
         </div>
 
         <div className="txtb">
           <label>
             What are your expected barriers towards your exercise program?
           </label>
-          <input type="text" name="" required />
+          <input
+            type="text"
+            name=""
+            value={formData.barriers}
+            onChange={(e) => {
+              setFormData({ ...formData, barriers: e.target.value });
+            }}
+            required
+          />
         </div>
 
         <div className="txtb">

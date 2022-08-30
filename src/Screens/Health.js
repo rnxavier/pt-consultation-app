@@ -1,7 +1,7 @@
 // import background from "../Images/contact-background.jpeg";
 import Navbar from "../Components/Navbar";
 
-const Health = () => {
+const Health = ({ formData, setFormData }) => {
   return (
     <>
       <Navbar />
@@ -107,7 +107,14 @@ const Health = () => {
           <input type="radio" value="Yes" /> Yes
           <input type="radio" value="No" /> No
           <label>If yes, when?</label>
-          <input type="text" name="" />
+          <input
+            type="text"
+            name=""
+            value={formData.covidDate}
+            onChange={(e) => {
+              setFormData({ ...formData, covidDate: e.target.value });
+            }}
+          />
         </div>
 
         {/* <div className="button-div">
