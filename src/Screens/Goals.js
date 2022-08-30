@@ -1,7 +1,20 @@
 // import background from "../Images/contact-background.jpeg";
-import Navbar from "../Components/Navbar";
+import { useState } from "react";
 
 const Goals = ({ formData, setFormData }) => {
+  const handleCheckbox = (e) => {
+    setFormData({ ...formData, goals: e.target.value });
+  };
+
+  const handleRadio = (e) => {
+    const { name } = e.target;
+    setFormData({ ...formData, [name]: e.target.value });
+  };
+
+  // const handleResultsTime = (e) => {
+  //   setFormData({ ...formData, resultsTime: e.target.value });
+  // };
+
   return (
     <>
       {/* <Navbar /> */}
@@ -10,20 +23,45 @@ const Goals = ({ formData, setFormData }) => {
 
         <div className="txtb">
           <label>What are your main goals for this exercise program?</label>
-          <input type="radio" value="Option 1" /> Option 1
-          <input type="radio" value="Option 2" /> Option 2
-          <input type="radio" value="Option 3" /> Option 3
-          <input type="radio" value="Option 4" /> Option 4
-          <input type="radio" value="Option 5" /> Option 5
+          <input
+            type="checkbox"
+            value="Option 1"
+            onChange={handleCheckbox}
+          />{" "}
+          Option 1
+          <input
+            type="checkbox"
+            value="Option 2"
+            onChange={handleCheckbox}
+          />{" "}
+          Option 2
+          <input
+            type="checkbox"
+            value="Option 3"
+            onChange={handleCheckbox}
+          />{" "}
+          Option 3
+          <input
+            type="checkbox"
+            value="Option 4"
+            onChange={handleCheckbox}
+          />{" "}
+          Option 4
+          <input
+            type="checkbox"
+            value="Option 5"
+            onChange={handleCheckbox}
+          />{" "}
+          Option 5
         </div>
 
         <div className="txtb">
           <label>Which body parts would you like to focus on?</label>
-          <input type="radio" value="Option 1" /> Option 1
-          <input type="radio" value="Option 2" /> Option 2
-          <input type="radio" value="Option 3" /> Option 3
-          <input type="radio" value="Option 4" /> Option 4
-          <input type="radio" value="Option 5" /> Option 5
+          <input type="checkbox" value="Option 1" /> Option 1
+          <input type="checkbox" value="Option 2" /> Option 2
+          <input type="checkbox" value="Option 3" /> Option 3
+          <input type="checkbox" value="Option 4" /> Option 4
+          <input type="checkbox" value="Option 5" /> Option 5
         </div>
 
         <div className="txtb">
@@ -31,11 +69,46 @@ const Goals = ({ formData, setFormData }) => {
             How long after beginning your training regime do you expect to see
             results?
           </label>
-          <input type="radio" value="Option 1" /> Option 1
-          <input type="radio" value="Option 2" /> Option 2
-          <input type="radio" value="Option 3" /> Option 3
-          <input type="radio" value="Option 4" /> Option 4
-          <input type="radio" value="Option 5" /> Option 5
+          <input
+            type="radio"
+            value="Option 1"
+            name="resultsTime"
+            onChange={handleRadio}
+            checked={formData.resultsTime === "Option 1"}
+          />{" "}
+          Option 1
+          <input
+            type="radio"
+            value="Option 2"
+            name="resultsTime"
+            onChange={handleRadio}
+            checked={formData.resultsTime === "Option 2"}
+          />{" "}
+          Option 2
+          <input
+            type="radio"
+            value="Option 3"
+            name="resultsTime"
+            onChange={handleRadio}
+            checked={formData.resultsTime === "Option 3"}
+          />{" "}
+          Option 3
+          <input
+            type="radio"
+            value="Option 4"
+            name="resultsTime"
+            onChange={handleRadio}
+            checked={formData.resultsTime === "Option 4"}
+          />{" "}
+          Option 4
+          <input
+            type="radio"
+            value="Option 5"
+            name="resultsTime"
+            onChange={handleRadio}
+            checked={formData.resultsTime === "Option 5"}
+          />{" "}
+          Option 5
         </div>
 
         <div className="txtb">
@@ -43,16 +116,85 @@ const Goals = ({ formData, setFormData }) => {
             On a scale of 1-10, how would you describe your current knowledge of
             exercise and fitness?
           </label>
-          <input type="radio" value="Option 1" /> 1
-          <input type="radio" value="Option 2" /> 2
-          <input type="radio" value="Option 3" /> 3
-          <input type="radio" value="Option 4" /> 4
-          <input type="radio" value="Option 5" /> 5
-          <input type="radio" value="Option 6" /> 6
-          <input type="radio" value="Option 7" /> 7
-          <input type="radio" value="Option 8" /> 8
-          <input type="radio" value="Option 9" /> 9
-          <input type="radio" value="Option 10" /> 10
+          <input
+            type="radio"
+            value="1"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "1"}
+          />{" "}
+          1
+          <input
+            type="radio"
+            value="2"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "2"}
+          />{" "}
+          2
+          <input
+            type="radio"
+            value="3"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "3"}
+          />{" "}
+          3
+          <input
+            type="radio"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "4"}
+          />{" "}
+          4
+          <input
+            type="radio"
+            value="5"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "5"}
+          />{" "}
+          5
+          <input
+            type="radio"
+            value="6"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "6"}
+          />{" "}
+          6
+          <input
+            type="radio"
+            value="7"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "7"}
+          />{" "}
+          7
+          <input
+            type="radio"
+            value="8"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "8"}
+          />{" "}
+          8
+          <input
+            type="radio"
+            value="9"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "9"}
+          />{" "}
+          9
+          <input
+            type="radio"
+            value="10"
+            name="knowledge"
+            onChange={handleRadio}
+            checked={formData.knowledge === "10"}
+          />{" "}
+          10
         </div>
 
         <div className="txtb">
