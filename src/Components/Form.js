@@ -5,7 +5,7 @@ import Goals from "../Screens/Goals";
 import Health from "../Screens/Health";
 import Agreement from "../Screens/Agreement";
 import Measurements from "../Screens/Measurements";
-// import Navbar from "./Navbar";
+import { db } from "../Firebase";
 
 const Form = () => {
   const [page, setPage] = useState(0);
@@ -127,7 +127,11 @@ const Form = () => {
               <div className="btn-subtext">{formTitles[page - 1]}</div>
             </button>
 
-            <button className="button">
+            <button
+              className="button"
+              type="submit"
+              onClick={console.log("clicked!")}
+            >
               <div className="submit-btn-text">Submit</div>
             </button>
           </div>
@@ -270,13 +274,105 @@ const Form = () => {
     }
   `;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    db.collection("clients")
+      .add({
+        name: formData.name,
+        gender: formData.gender,
+        dob: formData.dob,
+        contactNo: formData.contactNo,
+        email: formData.email,
+        emergencyContact: formData.emergencyContact,
+        emergencyNo: formData.emergencyNo,
+        goals: formData.goals,
+        bodyParts: formData.bodyParts,
+        resultsTime: formData.resultsTime,
+        knowledge: formData.knowledge,
+        motivation: formData.motivation,
+        barriers: formData.barriers,
+        help: formData.help,
+        heartCon: formData.heartCon,
+        chestCon: formData.chestCon,
+        diabetes: formData.diabetes,
+        epilepsy: formData.epilepsy,
+        muscleCon: formData.muscleCon,
+        neckCon: formData.neckCon,
+        bloodPressure: formData.bloodPressure,
+        dizziness: formData.dizziness,
+        pregnancy: formData.pregnancy,
+        majorOps: formData.majorOps,
+        medication: formData.medication,
+        temp: formData.temp,
+        covid: formData.covid,
+        covidDate: formData.covidDate,
+        height: formData.height,
+        weight: formData.weight,
+        bodyFat: formData.bodyFat,
+        water: formData.water,
+        muscle: formData.muscle,
+        physique: formData.physique,
+        metabolicRate: formData.metabolicRate,
+        metabolicAge: formData.metabolicAge,
+        boneMass: formData.boneMass,
+        visceralFat: formData.visceralFat,
+      })
+      .then(() => {
+        alert("Client registered successfully ✅");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+
+    setFormData({
+      name: "",
+      gender: "",
+      dob: "",
+      contactNo: "",
+      email: "",
+      emergencyContact: "",
+      emergencyNo: "",
+      goals: "",
+      bodyParts: "",
+      resultsTime: "",
+      knowledge: "",
+      motivation: "",
+      barriers: "",
+      help: "",
+      heartCon: "",
+      chestCon: "",
+      diabetes: "",
+      epilepsy: "",
+      muscleCon: "",
+      neckCon: "",
+      bloodPressure: "",
+      dizziness: "",
+      pregnancy: "",
+      majorOps: "",
+      medication: "",
+      temp: "",
+      covid: "",
+      covidDate: "",
+      height: "",
+      weight: "",
+      bodyFat: "",
+      water: "",
+      muscle: "",
+      physique: "",
+      metabolicRate: "",
+      metabolicAge: "",
+      boneMass: "",
+      visceralFat: "",
+    });
+  };
+
   return (
     <div className="form">
       <Navbar />
-      <div className="form-container">
+      <form className="form-container" onSubmit={handleSubmit}>
         <div className="body">{pageDisplay()}</div>
         <div className="footer">{buttonDisplay()}</div>
-      </div>
+      </form>
     </div>
   );
 };
