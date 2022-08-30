@@ -160,7 +160,7 @@ const Health = ({ formData, setFormData }) => {
             value="Yes"
             name="bloodPressure"
             onChange={handleRadio}
-            checked={formData.bloodPressure === "No"}
+            checked={formData.bloodPressure === "Yes"}
           />{" "}
           Yes
           <input
