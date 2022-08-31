@@ -131,7 +131,7 @@ const Agreement = () => {
           </div>
         </div>
 
-        <span>Date signed: {date}</span>
+        <h2>Date signed: {date}</h2>
       </div>
     </>
   );

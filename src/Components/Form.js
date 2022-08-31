@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import styled from "styled-components";
 import Clients from "../Screens/Clients";
 import ClientInfo from "../Screens/ClientInfo";
@@ -9,6 +10,12 @@ import Measurements from "../Screens/Measurements";
 import { db } from "../Firebase";
 
 const Form = () => {
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: "Client Measurements",
+  });
+
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
@@ -95,7 +102,11 @@ const Form = () => {
     switch (page) {
       case 0:
         return (
-          <div className="single-button-div">
+          <div className="button-div">
+            <button className="button" onClick={handlePrint}>
+              <div className="btn-text">Save as PDF</div>
+            </button>
+
             <button
               className="button"
               onClick={() => {
@@ -112,7 +123,7 @@ const Form = () => {
       case 2:
       case 3:
         return (
-          <div className="button-div">
+          <div className="button-div agreement-btns">
             <button
               className="button"
               onClick={() => {
@@ -121,6 +132,10 @@ const Form = () => {
             >
               <div className="btn-text">Previous</div>
               <div className="btn-subtext">{formTitles[page - 1]}</div>
+            </button>
+
+            <button className="button" onClick={handlePrint}>
+              <div className="btn-text">Save as PDF</div>
             </button>
 
             <button
@@ -146,6 +161,10 @@ const Form = () => {
             >
               <div className="btn-text">Previous</div>
               <div className="btn-subtext">{formTitles[page - 1]}</div>
+            </button>
+
+            <button className="button" onClick={handlePrint}>
+              <div className="btn-text">Save as PDF</div>
             </button>
 
             <button className="button" type="submit" onClick={handleSubmit}>
@@ -425,7 +444,9 @@ const Form = () => {
     <div className="form">
       <Navbar />
       <div className="form-container">
-        <div className="body">{pageDisplay()}</div>
+        <div className="body" ref={componentRef}>
+          {pageDisplay()}
+        </div>
         <div className="footer">{buttonDisplay()}</div>
       </div>
     </div>
