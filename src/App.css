@@ -53,11 +53,6 @@ form h2 {
 
 /* BUTTONS */
 
-.single-button-div {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .button-div {
   display: flex;
   justify-content: space-between;
@@ -118,6 +113,12 @@ form h2 {
 .signature-pad p {
   font-style: italic;
 }
+
+.agreement-btns {
+  margin-top: 1%;
+}
+
+
 
 /* HEALTH PAGE */
 .comments {

@@ -47,7 +47,7 @@ const Clients = () => {
         </div>
         <div className="button-div">
           <button className="button" onClick={handlePrint}>
-            <div className="btn-text">Send to PDF</div>
+            <div className="btn-text">Save as PDF</div>
           </button>
 
           <button className="button">
