@@ -1,8 +1,4 @@
-.navbar {
-  background-color: blue;
-}
-
-
+/* FORM */
 
 .form {
   width: 85%;
@@ -43,6 +39,8 @@ form h1{
   margin-top: 6px;
 }
 
+/* BUTTONS */
+
 .single-button-div {
   display: flex;
   justify-content: flex-end;
@@ -82,6 +80,8 @@ form h1{
   font-size: 100%;
 }
 
+
+/* AGREEMENT PAGE */
 .agreement-div {
   width: 85%;
   background: rgb(255, 255, 255, 0.9);
@@ -93,6 +93,23 @@ form h1{
   margin-bottom: 10%;
 }
 
+
+/* CLIENTS PAGE */
 .client-name {
 cursor: pointer;
 }
+
+/* MODAL */
+
+
+.modal-container {
+  width: 20%;
+  background: rgb(255, 255, 255, 0.9);
+  padding: 50px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000000b3;
+  position: relative;
+  margin: auto;
+}
+
+

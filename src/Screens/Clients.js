@@ -1,12 +1,47 @@
 import { db } from "../Firebase";
+import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
 
 const Clients = () => {
   const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showMeasurements, setShowMeasurements] = useState(false);
   const [id, setId] = useState("");
+  const [selectedClient, setSelectedClient] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const Modal = () => {
+    return (
+      <div className="modal-container">
+        <div className="modal-title">
+          <h2>Body Measurements: {selectedClient.name}</h2>
+        </div>
+
+        <div className="modal-body">
+          <p>Height: {selectedClient.height}</p>
+          <p>Weight: {selectedClient.weight}</p>
+          <p>Body Fat: {selectedClient.bodyFat}</p>
+          <p>Water: {selectedClient.water}</p>
+          <p>Muscle: {selectedClient.muscle}</p>
+          <p>Physique: {selectedClient.physique}</p>
+          <p>Metabolic Rate: {selectedClient.metabolicRate}</p>
+          <p>Metabolic Age: {selectedClient.metabolicAge}</p>
+          <p>Bone Mass: {selectedClient.boneMass}</p>
+          <p>Visceral Fat: {selectedClient.visceralFat}</p>
+        </div>
+
+        <div className="modal-footer">
+          <button
+            onClick={() => {
+              setShowModal(false);
+            }}
+          >
+            CLOSE
+          </button>
+          <button>UPDATE</button>
+        </div>
+      </div>
+    );
+  };
 
   // When clicking on a client name, set id
   // In displayMeasurements function, display client measurements with a particular id
@@ -20,47 +55,41 @@ const Clients = () => {
         }))
       );
     });
-    console.log({ clients });
   }, []);
 
-  const displayMeasurements = () => {
-    return clients?.map(({ id, data }) => (
-      <div key={id}>
-        <p>{data.name}</p>
-        <p>Height: {data.height}</p>
-        <p>Weight: {data.weight}</p>
-        <p>Body Fat: {data.bodyFat}</p>
-        <p>Water: {data.water}</p>
-        <p>Muscle: {data.muscle}</p>
-        <p>Metabolic Rate: {data.metabolicRate}</p>
-        <p>Metabolic Age: {data.metabolicAge}</p>
-        <p>Bone Mass: {data.boneMass}</p>
-        <p>Visceral Fat: {data.visceralFat}</p>
-      </div>
-    ));
+  const getClientById = async () => {
+    const docRef = doc(db, "clients", id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      setSelectedClient(docSnap.data());
+      setLoading(false);
+      console.log(selectedClient);
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
   };
 
   return (
     <>
       <h1>Clients</h1>
-      {clients?.map(({ id, data }) => (
+
+      {clients.map(({ id, data }) => (
         <div key={id}>
           <a
             className="client-name"
             onClick={() => {
-              setShowMeasurements(!showMeasurements);
+              setId(id);
+              getClientById();
+              setShowModal(true);
             }}
           >
             {data.name}
           </a>
         </div>
       ))}
-      {showMeasurements ? (
-        <div>
-          <h2>Body Measurements</h2>
-          {displayMeasurements()}
-        </div>
-      ) : null}
+      {showModal && <Modal />}
     </>
   );
 };
