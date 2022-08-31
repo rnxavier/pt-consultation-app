@@ -13,6 +13,15 @@ const Clients = () => {
     return (
       <div className="modal-container">
         <div className="modal-title">
+          <div className="close-btn">
+            <button
+              onClick={() => {
+                setShowModal(false);
+              }}
+            >
+              x
+            </button>
+          </div>
           <h2>Body Measurements: {selectedClient.name}</h2>
         </div>
 
@@ -29,15 +38,14 @@ const Clients = () => {
           <p>Visceral Fat: {selectedClient.visceralFat}</p>
         </div>
 
-        <div className="modal-footer">
-          <button
-            onClick={() => {
-              setShowModal(false);
-            }}
-          >
-            CLOSE
+        <div className="button-div">
+          <button className="button">
+            <div className="btn-text">Send to email</div>
           </button>
-          <button>UPDATE</button>
+
+          <button className="button">
+            <div className="btn-text">Update</div>
+          </button>
         </div>
       </div>
     );
