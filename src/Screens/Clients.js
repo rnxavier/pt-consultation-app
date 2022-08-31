@@ -24,7 +24,7 @@ const Clients = () => {
               setShowModal(false);
             }}
           >
-            x
+            X
           </button>
         </div>
         <div className="modal-container" ref={componentRef}>
@@ -87,13 +87,13 @@ const Clients = () => {
   };
 
   return (
-    <>
+    <div className="clients-div">
       <h1>Clients</h1>
 
       {clients.map(({ id, data }) => (
         <div key={id}>
-          <a
-            className="client-name"
+          <button
+            className="clients-div-btn"
             onClick={() => {
               setId(id);
               getClientById();
@@ -101,11 +101,11 @@ const Clients = () => {
             }}
           >
             {data.name}
-          </a>
+          </button>
         </div>
       ))}
       {showModal && <Modal />}
-    </>
+    </div>
   );
 };
 
