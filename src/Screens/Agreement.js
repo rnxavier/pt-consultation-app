@@ -1,4 +1,4 @@
-// import background from "../Images/contact-background.jpeg";
+import SignatureCanvas from "react-signature-canvas";
 
 const Agreement = () => {
   const current = new Date();
@@ -113,6 +113,23 @@ const Agreement = () => {
         </ol>
 
         <h2>I agree to the above statements:</h2>
+
+        <div className="signature-pads">
+          <div className="signature-pad">
+            <SignatureCanvas
+              penColor="black"
+              canvasProps={{ width: 500, height: 200 }}
+            />
+            <p>Client Signature</p>
+          </div>
+          <div className="signature-pad">
+            <SignatureCanvas
+              penColor="black"
+              canvasProps={{ width: 500, height: 200 }}
+            />
+            <p>Trainer Signature</p>
+          </div>
+        </div>
 
         <span>Date signed: {date}</span>
       </div>
