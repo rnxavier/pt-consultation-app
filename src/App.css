@@ -105,6 +105,20 @@ form h2 {
   font-size: 1rem;
 }
 
+.signature-pads {
+  display: flex;
+}
+
+.signature-pad {
+  display: block;
+  border: black;
+  border-width: 1px;
+}
+
+.signature-pad p {
+  font-style: italic;
+}
+
 /* HEALTH PAGE */
 .comments {
   margin-top: 1%;
