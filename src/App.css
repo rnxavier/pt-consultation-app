@@ -100,8 +100,6 @@ cursor: pointer;
 }
 
 /* MODAL */
-
-
 .modal-container {
   width: 20%;
   background: rgb(255, 255, 255, 0.9);
@@ -112,4 +110,17 @@ cursor: pointer;
   margin: auto;
 }
 
+.close-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn button {
+  background-color: red;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  padding: 1% 2%;
+  cursor: pointer;
+}
 
