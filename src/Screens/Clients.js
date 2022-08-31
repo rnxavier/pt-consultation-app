@@ -1,6 +1,7 @@
 import { db } from "../Firebase";
 import { doc, getDoc } from "firebase/firestore";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
 const Clients = () => {
   const [clients, setClients] = useState([]);
@@ -10,44 +11,50 @@ const Clients = () => {
   const [showModal, setShowModal] = useState(false);
 
   const Modal = () => {
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+      content: () => componentRef.current,
+      documentTitle: "Client Measurements",
+    });
     return (
-      <div className="modal-container">
-        <div className="modal-title">
-          <div className="close-btn">
-            <button
-              onClick={() => {
-                setShowModal(false);
-              }}
-            >
-              x
-            </button>
+      <>
+        <div className="close-btn">
+          <button
+            onClick={() => {
+              setShowModal(false);
+            }}
+          >
+            x
+          </button>
+        </div>
+        <div className="modal-container" ref={componentRef}>
+          <div className="modal-title">
+            <h2>Body Measurements: {selectedClient.name}</h2>
           </div>
-          <h2>Body Measurements: {selectedClient.name}</h2>
-        </div>
 
-        <div className="modal-body">
-          <p>Height: {selectedClient.height}</p>
-          <p>Weight: {selectedClient.weight}</p>
-          <p>Body Fat: {selectedClient.bodyFat}</p>
-          <p>Water: {selectedClient.water}</p>
-          <p>Muscle: {selectedClient.muscle}</p>
-          <p>Physique: {selectedClient.physique}</p>
-          <p>Metabolic Rate: {selectedClient.metabolicRate}</p>
-          <p>Metabolic Age: {selectedClient.metabolicAge}</p>
-          <p>Bone Mass: {selectedClient.boneMass}</p>
-          <p>Visceral Fat: {selectedClient.visceralFat}</p>
+          <div className="modal-body">
+            <p>Height: {selectedClient.height}</p>
+            <p>Weight: {selectedClient.weight}</p>
+            <p>Body Fat: {selectedClient.bodyFat}</p>
+            <p>Water: {selectedClient.water}</p>
+            <p>Muscle: {selectedClient.muscle}</p>
+            <p>Physique: {selectedClient.physique}</p>
+            <p>Metabolic Rate: {selectedClient.metabolicRate}</p>
+            <p>Metabolic Age: {selectedClient.metabolicAge}</p>
+            <p>Bone Mass: {selectedClient.boneMass}</p>
+            <p>Visceral Fat: {selectedClient.visceralFat}</p>
+          </div>
         </div>
-
         <div className="button-div">
-          <button className="button">
-            <div className="btn-text">Send to email</div>
+          <button className="button" onClick={handlePrint}>
+            <div className="btn-text">Send to PDF</div>
           </button>
 
           <button className="button">
             <div className="btn-text">Update</div>
           </button>
         </div>
-      </div>
+      </>
     );
   };
 
