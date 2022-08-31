@@ -5,7 +5,7 @@ const Measurements = ({ formData, setFormData }) => {
     <>
       {/* <Navbar /> */}
       <form>
-        <h1>Client's First Measurements</h1>
+        <h1>Initial Measurements</h1>
 
         <div className="txtb">
           <label>Height</label>

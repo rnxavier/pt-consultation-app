@@ -10,7 +10,7 @@ const ClientInfo = ({ formData, setFormData }) => {
     <>
       {/* <Navbar /> */}
       <form>
-        <h1>Client Information</h1>
+        <h1>Personal Information</h1>
         <div className="txtb">
           <label>Full Name</label>
           <input

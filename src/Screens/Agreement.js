@@ -8,13 +8,10 @@ const Agreement = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
       <div className="agreement-div">
-        <h1>Agreement</h1>
+        <h1>Agreement: Client Declaration</h1>
 
-        <h2>Client Declaration</h2>
-
-        <h3>I understand that</h3>
+        <h2>I understand that</h2>
 
         <ol>
           <li>
@@ -115,21 +112,9 @@ const Agreement = () => {
           </li>
         </ol>
 
-        <h3>I agree to the above statements:</h3>
+        <h2>I agree to the above statements:</h2>
 
         <span>Date signed: {date}</span>
-
-        {/* <div className="button-div">
-          <a className="button" href="/goals">
-            <div className="btn-text">Previous</div>
-            <div className="btn-subtext">Client Goals</div>
-          </a>
-
-          <a className="button" href="/measurements">
-            <div className="btn-text">Next</div>
-            <div className="btn-subtext">Measurements</div>
-          </a>
-        </div> */}
       </div>
     </>
   );
