@@ -66,11 +66,11 @@ const Form = () => {
   console.log(page);
 
   const formTitles = [
-    "Client Information",
-    "Client Goals",
-    "Client Health",
+    "Personal Information",
+    "Goals & Motivation",
+    "Health & Injuries",
     "Agreement",
-    "Client Measurements",
+    "Initial Measurements",
     "Clients",
   ];
 
@@ -163,7 +163,7 @@ const Form = () => {
         <div>
           <Nav>
             <Logo href="">
-              Biz<span>Training</span>
+              Biz💪🏾<span>Training</span>
             </Logo>
             <Hamburger
               onClick={() => {
@@ -231,11 +231,16 @@ const Form = () => {
   };
 
   const Nav = styled.div`
-    padding: 0 2rem;
+    padding: 0 2rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+
+    @media (max-width: 800px) and (min-width: 769px) {
+      display: flex;
+      justify-content: space-around;
+    }
   `;
 
   const Logo = styled.a`
@@ -245,9 +250,25 @@ const Form = () => {
     font-weight: 800;
     font-size: 1.7rem;
 
+    @media (max-width: 1140px) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 1010px) {
+      font-size: 1.3rem;
+    }
+
     span {
       font-weight: 300;
       font-size: 1.3rem;
+
+      @media (max-width: 1140px) {
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: 1010px) {
+        font-size: 0.9rem;
+      }
     }
   `;
 
@@ -275,9 +296,18 @@ const Form = () => {
     transition: all 0.3s ease-in;
     border: none;
     background-color: #fff;
+    font-size: 1.2rem;
 
     &:hover {
       color: #3c99dc;
+    }
+
+    @media (max-width: 1140px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 1010px) {
+      font-size: 0.8rem;
     }
   `;
 

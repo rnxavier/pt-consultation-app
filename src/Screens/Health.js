@@ -14,7 +14,7 @@ const Health = ({ formData, setFormData }) => {
     <>
       {/* <Navbar /> */}
       <form>
-        <h1>Client Health &amp; Injuries</h1>
+        <h1>Health &amp; Injuries</h1>
 
         <h2>
           Do you have any of the following conditions or injuries? If yes,
@@ -39,8 +39,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.heartCon === "No"}
           />
           No
-          <label>Comments</label>
-          <input type="text" name="heartConComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="heartConComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -61,8 +63,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.chestCon === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="chestConComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="chestConComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -83,8 +87,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.diabetes === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="diabetesComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="diabetesComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -105,8 +111,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.epilepsy === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="epilepsyComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="epilepsyComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -127,8 +135,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.muscleCon === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="muscleComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="muscleComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -149,8 +159,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.neckCon === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="neckComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="neckComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -171,12 +183,14 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.bloodPressure === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input
-            type="text"
-            name="bloodPressureComments"
-            onChange={handleText}
-          />
+          <div className="comments">
+            <label>Comments</label>
+            <input
+              type="text"
+              name="bloodPressureComments"
+              onChange={handleText}
+            />
+          </div>
         </div>
 
         <div className="txtb">
@@ -199,8 +213,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.dizziness === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="dizzinessComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="dizzinessComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -221,8 +237,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.pregnancy === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="pregnancyComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="pregnancyComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -243,8 +261,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.majorOps === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="majorOpsComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="majorOpsComments" onChange={handleText} />
+          </div>
         </div>
 
         <div className="txtb">
@@ -268,8 +288,14 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.medication === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="medicationComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input
+              type="text"
+              name="medicationComments"
+              onChange={handleText}
+            />
+          </div>
         </div>
         <div className="txtb">
           <label>Temperature &gt; 38&#176;C</label>
@@ -289,8 +315,10 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.temp === "No"}
           />{" "}
           No
-          <label>Comments</label>
-          <input type="text" name="tempComments" onChange={handleText} />
+          <div className="comments">
+            <label>Comments</label>
+            <input type="text" name="tempComments" onChange={handleText} />
+          </div>
         </div>
         <div className="txtb">
           <label>Have you ever contracted COVID-19?</label>
@@ -310,26 +338,16 @@ const Health = ({ formData, setFormData }) => {
             checked={formData.covid === "No"}
           />{" "}
           No
-          <label>If yes, when?</label>
-          <input
-            type="text"
-            name="covidDate"
-            value={formData.covidDate}
-            onChange={handleText}
-          />
+          <div className="comments">
+            <label>If yes, when?</label>
+            <input
+              type="text"
+              name="covidDate"
+              value={formData.covidDate}
+              onChange={handleText}
+            />
+          </div>
         </div>
-
-        {/* <div className="button-div">
-          <a className="button" href="/goals">
-            <div className="btn-text">Previous</div>
-            <div className="btn-subtext">Client Goals</div>
-          </a>
-
-          <a className="button" href="/agreement">
-            <div className="btn-text">Next</div>
-            <div className="btn-subtext">Agreement</div>
-          </a>
-        </div> */}
       </form>
     </>
   );

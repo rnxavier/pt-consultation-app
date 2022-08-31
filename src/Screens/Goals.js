@@ -16,7 +16,7 @@ const Goals = ({ formData, setFormData }) => {
     <>
       {/* <Navbar /> */}
       <form>
-        <h1>Client Goals</h1>
+        <h1>Goals &amp; Motivation</h1>
 
         <div className="txtb">
           <label>What are your main goals for this exercise program?</label>
