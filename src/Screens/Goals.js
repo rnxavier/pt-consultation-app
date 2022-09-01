@@ -1,12 +1,10 @@
+import { useEffect } from "react";
+
 const Goals = ({ formData, setFormData }) => {
   const handleRadio = (e) => {
     const { name } = e.target;
     setFormData({ ...formData, [name]: e.target.value });
   };
-
-  // const handleResultsTime = (e) => {
-  //   setFormData({ ...formData, resultsTime: e.target.value });
-  // };
 
   return (
     <>
@@ -17,79 +15,27 @@ const Goals = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>What are your main goals for this exercise program?</label>
           <input
-            type="checkbox"
-            value="Option 1"
-            name="goals"
-            onChange={handleRadio}
-          />{" "}
-          Option 1
-          <input
-            type="checkbox"
-            value="Option 2"
-            name="goals"
-            onChange={handleRadio}
-          />{" "}
-          Option 2
-          <input
-            type="checkbox"
-            value="Option 3"
-            name="goals"
-            onChange={handleRadio}
-          />{" "}
-          Option 3
-          <input
-            type="checkbox"
-            value="Option 4"
-            name="goals"
-            onChange={handleRadio}
-          />{" "}
-          Option 4
-          <input
-            type="checkbox"
-            value="Option 5"
-            name="goals"
-            onChange={handleRadio}
-          />{" "}
-          Option 5
+            type="text"
+            name=""
+            value={formData.goals}
+            onChange={(e) => {
+              setFormData({ ...formData, goals: e.target.value });
+            }}
+            required
+          />
         </div>
 
         <div className="txtb">
           <label>Which body parts would you like to focus on?</label>
           <input
-            type="checkbox"
-            value="Option 1"
-            name="bodyParts"
-            onChange={handleRadio}
-          />{" "}
-          Option 1
-          <input
-            type="checkbox"
-            value="Option 2"
-            name="bodyParts"
-            onChange={handleRadio}
-          />{" "}
-          Option 2
-          <input
-            type="checkbox"
-            value="Option 3"
-            name="bodyParts"
-            onChange={handleRadio}
-          />{" "}
-          Option 3
-          <input
-            type="checkbox"
-            value="Option 4"
-            name="bodyParts"
-            onChange={handleRadio}
-          />{" "}
-          Option 4
-          <input
-            type="checkbox"
-            value="Option 5"
-            name="bodyParts"
-            onChange={handleRadio}
-          />{" "}
-          Option 5
+            type="text"
+            name=""
+            value={formData.bodyParts}
+            onChange={(e) => {
+              setFormData({ ...formData, bodyParts: e.target.value });
+            }}
+            required
+          />
         </div>
 
         <div className="txtb">
