@@ -249,13 +249,14 @@ const Clients = () => {
             X
           </button>
         </div>
+
         <div className="modal-container" ref={componentRef}>
           <div className="modal-title">
             <h2>Body Measurements: {selectedClient.name}</h2>
           </div>
 
           <div className="modal-body">
-            <div className="modal-grid">
+            <div className="modal-grid centre-txt">
               <p>MEASUREMENT</p>
               <p>CURRENT VALUE</p>
               <p>NEW VALUE</p>
@@ -274,6 +275,7 @@ const Clients = () => {
                   }}
                 />
               </div>
+
               <button className="update-btn" onClick={updateHeight}>
                 +
               </button>
@@ -433,13 +435,10 @@ const Clients = () => {
             </div>
           </div>
         </div>
-        <div className="button-div">
+
+        <div className="single-btn-div">
           <button className="button" onClick={handlePrint}>
             <div className="btn-text">Save as PDF</div>
-          </button>
-
-          <button className="button">
-            <div className="btn-text">Update</div>
           </button>
         </div>
       </>

@@ -43,11 +43,12 @@ form h2 {
   font-size: 14px;
 }
 
+
 .txtb input, .txtb textarea {
   border: none;
   background: none;
   outline: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-top: 6px;
 }
 
@@ -69,6 +70,14 @@ form h2 {
   box-shadow: 0 0 10px #808080;
   text-align: left;
   cursor: pointer;
+}
+
+@media screen and (max-width: 479px) {
+
+  .button {
+    font-size: 0.6rem;
+    /* box-shadow: 0 0 3px #808080; */
+  }
 }
 
 
@@ -154,11 +163,14 @@ form h2 {
   position: relative;
   margin: auto;
   margin-bottom: 5%;
+  font-size: 0.9rem;
 }
 
 .modal-grid {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  row-gap: 0.5%;
+  /* text-align: center; */
 }
 
 .modal-title h2{
@@ -183,16 +195,40 @@ form h2 {
 
 .new-measurement-txtb {
   width: 40%;
+  margin-left: 27%;
 }
 
+.new-measurement-txtb ::placeholder {
+  font-size: 1rem;
+  text-align:start;
+
+}
+
+
+
 .update-btn {
-  width: 40%;
-  height: 45%;
+  /* width: 40%; */
+  height: 80%;
   background:#1b4079;
   border: none;
-  color: #fff;
+color: #fff;
   border-radius: 4px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
+
+.single-btn-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.centre-txt {
+  text-align: center;
+}
+
+
+
+
+
+
 
