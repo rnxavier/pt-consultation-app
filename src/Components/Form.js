@@ -256,7 +256,7 @@ const Form = () => {
     align-items: center;
     flex-wrap: wrap;
 
-    @media (max-width: 800px) and (min-width: 769px) {
+    @media (max-width: 808px) and (min-width: 769px) {
       display: flex;
       justify-content: space-around;
     }
@@ -268,6 +268,7 @@ const Form = () => {
     text-decoration: none;
     font-weight: 800;
     font-size: 1.7rem;
+    color: #1b4079;
 
     @media (max-width: 1140px) {
       font-size: 1.5rem;
@@ -278,7 +279,7 @@ const Form = () => {
     }
 
     span {
-      font-weight: 300;
+      font-weight: 450;
       font-size: 1.3rem;
 
       @media (max-width: 1140px) {
@@ -286,7 +287,7 @@ const Form = () => {
       }
 
       @media (max-width: 1010px) {
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
     }
   `;
@@ -311,14 +312,15 @@ const Form = () => {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    color: #66d3fa;
+
+    color: #1b4079;
     transition: all 0.3s ease-in;
     border: none;
     background-color: #fff;
     font-size: 1.2rem;
 
     &:hover {
-      color: #3c99dc;
+      color: #66d3fa;
     }
 
     @media (max-width: 1140px) {
