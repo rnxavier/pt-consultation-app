@@ -8,7 +8,7 @@ import {
   storageBucket,
   messagingSenderId,
   appId,
-} from "../secret";
+} from "./secret";
 
 var firebaseApp = firebase.initializeApp({
   apiKey: apiKey,
