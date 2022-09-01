@@ -156,6 +156,11 @@ form h2 {
   margin-bottom: 5%;
 }
 
+.modal-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
 .modal-title h2{
   margin-top: 0;
   font-weight: 500;
@@ -174,5 +179,9 @@ form h2 {
   border-radius: 4px;
   padding: 0.5% 1%;
   cursor: pointer;
+}
+
+.new-measurement-txtb {
+  width: 20%;
 }
 

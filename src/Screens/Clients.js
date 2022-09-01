@@ -3,7 +3,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
-const Clients = () => {
+const Clients = ({ formData, setFormData }) => {
   const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(true);
   const [id, setId] = useState("");
@@ -33,16 +33,71 @@ const Clients = () => {
           </div>
 
           <div className="modal-body">
-            <p>Height: {selectedClient.height}</p>
-            <p>Weight: {selectedClient.weight}</p>
-            <p>Body Fat: {selectedClient.bodyFat}</p>
-            <p>Water: {selectedClient.water}</p>
-            <p>Muscle: {selectedClient.muscle}</p>
-            <p>Physique: {selectedClient.physique}</p>
-            <p>Metabolic Rate: {selectedClient.metabolicRate}</p>
-            <p>Metabolic Age: {selectedClient.metabolicAge}</p>
-            <p>Bone Mass: {selectedClient.boneMass}</p>
-            <p>Visceral Fat: {selectedClient.visceralFat}</p>
+            <div className="modal-grid">
+              <p>MEASUREMENT</p>
+              <p>CURRENT VALUE</p>
+              <p>NEW VALUE</p>
+
+              <p>Height</p>
+              <p>Height: {selectedClient.height}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Height" type="text" name="" />
+              </div>
+
+              <p>Weight</p>
+              <p>Weight: {selectedClient.weight}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Weight" type="text" name="" />
+              </div>
+
+              <p>Body Fat</p>
+              <p>Body Fat: {selectedClient.bodyFat}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Body Fat" type="text" name="" />
+              </div>
+
+              <p>Water</p>
+              <p>Water: {selectedClient.water}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Water" type="text" name="" />
+              </div>
+
+              <p>Muscle</p>
+              <p>Muscle: {selectedClient.muscle}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Muscle" type="text" name="" />
+              </div>
+
+              <p>Physique</p>
+              <p>Physique: {selectedClient.physique}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Physique" type="text" name="" />
+              </div>
+
+              <p>Metabolic Rate</p>
+              <p>Metabolic Rate: {selectedClient.metabolicRate}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Metabolic Rate" type="text" name="" />
+              </div>
+
+              <p>Metabolic Age</p>
+              <p>Metabolic Age: {selectedClient.metabolicAge}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Metabolic Age" type="text" name="" />
+              </div>
+
+              <p>Bone Mass</p>
+              <p>Bone Mass: {selectedClient.boneMass}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Bone Mass" type="text" name="" />
+              </div>
+
+              <p>Visceral Fat</p>
+              <p>Visceral Fat: {selectedClient.visceralFat}</p>
+              <div className="txtb new-measurement-txtb">
+                <input placeholder="Visceral Fat" type="text" name="" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="button-div">
