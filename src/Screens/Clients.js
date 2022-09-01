@@ -255,13 +255,17 @@ const Clients = () => {
             <h2>Body Measurements: {selectedClient.name}</h2>
           </div>
 
-          <div className="modal-body">
-            <div className="modal-grid centre-txt">
+              <div className="modal-headers">
               <p>MEASUREMENT</p>
               <p>CURRENT VALUE</p>
               <p>NEW VALUE</p>
-              <p>UPDATE</p>
+              <p className="remove-me">UPDATE</p>
+              </div>
 
+          <div className="modal-body">
+            <div className="centre-txt">
+
+            <div className="modal-grid">
               <p>Height</p>
               <p>{selectedClient.height}</p>
               <div className="txtb new-measurement-txtb">
@@ -275,10 +279,10 @@ const Clients = () => {
                   }}
                 />
               </div>
-
               <button className="update-btn" onClick={updateHeight}>
                 +
               </button>
+            </div>
 
               <p>Weight</p>
               <p>{selectedClient.weight}</p>

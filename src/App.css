@@ -173,6 +173,12 @@ form h2 {
   /* text-align: center; */
 }
 
+.modal-headers {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  text-align: center;
+}
+
 .modal-title h2{
   margin-top: 0;
   font-weight: 500;
@@ -201,17 +207,14 @@ form h2 {
 .new-measurement-txtb ::placeholder {
   font-size: 1rem;
   text-align:start;
-
 }
-
-
 
 .update-btn {
   /* width: 40%; */
   height: 80%;
   background:#1b4079;
   border: none;
-color: #fff;
+  color: #fff;
   border-radius: 4px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -226,6 +229,29 @@ color: #fff;
   text-align: center;
 }
 
+@media screen and (max-width: 602px) {
+  .modal-container {
+    width: 80%;
+    background: rgb(255, 255, 255, 0.9);
+    padding: 50px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #000000b3;
+    position: relative;
+    margin: auto;
+    margin-bottom: 5%;
+    font-size: 0.9rem;
+  }
+
+  .mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .remove-me {
+    display: none;
+  }
+
+}
 
 
 
