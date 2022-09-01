@@ -1,8 +1,4 @@
 const Goals = ({ formData, setFormData }) => {
-  const handleCheckbox = (e) => {
-    setFormData({ ...formData, goals: e.target.value });
-  };
-
   const handleRadio = (e) => {
     const { name } = e.target;
     setFormData({ ...formData, [name]: e.target.value });
@@ -23,42 +19,77 @@ const Goals = ({ formData, setFormData }) => {
           <input
             type="checkbox"
             value="Option 1"
-            onChange={handleCheckbox}
+            name="goals"
+            onChange={handleRadio}
           />{" "}
           Option 1
           <input
             type="checkbox"
             value="Option 2"
-            onChange={handleCheckbox}
+            name="goals"
+            onChange={handleRadio}
           />{" "}
           Option 2
           <input
             type="checkbox"
             value="Option 3"
-            onChange={handleCheckbox}
+            name="goals"
+            onChange={handleRadio}
           />{" "}
           Option 3
           <input
             type="checkbox"
             value="Option 4"
-            onChange={handleCheckbox}
+            name="goals"
+            onChange={handleRadio}
           />{" "}
           Option 4
           <input
             type="checkbox"
             value="Option 5"
-            onChange={handleCheckbox}
+            name="goals"
+            onChange={handleRadio}
           />{" "}
           Option 5
         </div>
 
         <div className="txtb">
           <label>Which body parts would you like to focus on?</label>
-          <input type="checkbox" value="Option 1" /> Option 1
-          <input type="checkbox" value="Option 2" /> Option 2
-          <input type="checkbox" value="Option 3" /> Option 3
-          <input type="checkbox" value="Option 4" /> Option 4
-          <input type="checkbox" value="Option 5" /> Option 5
+          <input
+            type="checkbox"
+            value="Option 1"
+            name="bodyParts"
+            onChange={handleRadio}
+          />{" "}
+          Option 1
+          <input
+            type="checkbox"
+            value="Option 2"
+            name="bodyParts"
+            onChange={handleRadio}
+          />{" "}
+          Option 2
+          <input
+            type="checkbox"
+            value="Option 3"
+            name="bodyParts"
+            onChange={handleRadio}
+          />{" "}
+          Option 3
+          <input
+            type="checkbox"
+            value="Option 4"
+            name="bodyParts"
+            onChange={handleRadio}
+          />{" "}
+          Option 4
+          <input
+            type="checkbox"
+            value="Option 5"
+            name="bodyParts"
+            onChange={handleRadio}
+          />{" "}
+          Option 5
         </div>
 
         <div className="txtb">
