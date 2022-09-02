@@ -255,21 +255,22 @@ const Clients = () => {
             <h2>Body Measurements: {selectedClient.name}</h2>
           </div>
 
-              <div className="modal-headers">
+              <div className="modal-headers remove-me">
               <p>MEASUREMENT</p>
-              <p>CURRENT VALUE</p>
-              <p>NEW VALUE</p>
+              <p className="remove-me">CURRENT VALUE</p>
+              <p className="remove-me">NEW VALUE</p>
               <p className="remove-me">UPDATE</p>
               </div>
 
           <div className="modal-body">
             <div className="centre-txt">
 
-            <div className="modal-grid">
+            <div className="modal-grid mini-grid">
               <p>Height</p>
               <p>{selectedClient.height}</p>
               <div className="txtb new-measurement-txtb">
                 <input
+                  className="input-shrinker"
                   placeholder="Height"
                   type="text"
                   name=""
@@ -282,7 +283,8 @@ const Clients = () => {
               <button className="update-btn" onClick={updateHeight}>
                 +
               </button>
-            </div>
+              </div>
+
 
               <p>Weight</p>
               <p>{selectedClient.weight}</p>
@@ -300,6 +302,7 @@ const Clients = () => {
               <button className="update-btn" onClick={updateWeight}>
                 +
               </button>
+            
 
               <p>Body Fat</p>
               <p>{selectedClient.bodyFat}</p>
@@ -436,7 +439,7 @@ const Clients = () => {
               <button className="update-btn" onClick={updateVisceralFat}>
                 +
               </button>
-            </div>
+            
           </div>
         </div>
 
@@ -444,6 +447,7 @@ const Clients = () => {
           <button className="button" onClick={handlePrint}>
             <div className="btn-text">Save as PDF</div>
           </button>
+        </div>
         </div>
       </>
     );
