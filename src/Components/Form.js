@@ -182,7 +182,7 @@ const Form = () => {
         <div>
           <Nav>
             <Logo href="">
-              Biz💪🏾<span>Training</span>
+              Bizzie💪🏾<span>Trainer</span>
             </Logo>
             <Hamburger
               onClick={() => {

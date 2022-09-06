@@ -8,16 +8,15 @@ const Agreement = () => {
     current.getMonth() + 1
   }/${current.getFullYear()}`;
 
-  let canvasWidth = null
-  let canvasHeight = null
+  let canvasWidth = null;
+  let canvasHeight = null;
 
-  if(window.innerWidth > 1210) {
-    canvasWidth = 500
-    canvasHeight = 200
-  }
-  else if(window.innerWidth <= 1210) {
-    canvasWidth = 350
-    canvasHeight = 140
+  if (window.innerWidth > 1210) {
+    canvasWidth = 500;
+    canvasHeight = 200;
+  } else if (window.innerWidth <= 1210) {
+    canvasWidth = 300;
+    canvasHeight = 120;
   }
 
   return (
