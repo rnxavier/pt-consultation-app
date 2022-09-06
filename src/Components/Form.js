@@ -256,9 +256,14 @@ const Form = () => {
     align-items: center;
     flex-wrap: wrap;
 
-    @media (max-width: 808px) and (min-width: 769px) {
+    @media (max-width: 832px) {
       display: flex;
       justify-content: space-around;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: space-between;
     }
   `;
 
