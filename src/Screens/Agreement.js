@@ -1,6 +1,8 @@
 import SignatureCanvas from "react-signature-canvas";
 
 const Agreement = () => {
+  const width = window.innerWidth;
+
   const current = new Date();
   const date = `${current.getDate()}/${
     current.getMonth() + 1

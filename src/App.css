@@ -115,6 +115,10 @@ form h2 {
   font-style: italic;
 }
 
+@media screen and (max-width: 1210px) {
+
+}
+
 .signature-pad {
   display: block;
   border: 0.2rem solid #1b4079;;
