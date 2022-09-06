@@ -115,18 +115,22 @@ const Agreement = () => {
         <h2>I agree to the above statements:</h2>
 
         <div className="signature-pads">
-          <div className="signature-pad">
-            <SignatureCanvas
-              penColor="black"
-              canvasProps={{ width: 500, height: 200 }}
-            />
+          <div>
+            <div className="signature-pad">
+              <SignatureCanvas
+                penColor="black"
+                canvasProps={{ width: 500, height: 200 }}
+              />
+            </div>
             <p>Client Signature</p>
           </div>
-          <div className="signature-pad">
-            <SignatureCanvas
-              penColor="black"
-              canvasProps={{ width: 500, height: 200 }}
-            />
+          <div>
+            <div className="signature-pad">
+              <SignatureCanvas
+                penColor="black"
+                canvasProps={{ width: 500, height: 200 }}
+              />
+            </div>
             <p>Trainer Signature</p>
           </div>
         </div>

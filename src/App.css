@@ -111,17 +111,16 @@ form h2 {
 
 .signature-pads {
   display: flex;
+  justify-content: space-evenly;
+  font-style: italic;
 }
 
 .signature-pad {
   display: block;
-  border: black;
-  border-width: 1px;
+  border: 0.2rem solid #1b4079;;
 }
 
-.signature-pad p {
-  font-style: italic;
-}
+
 
 .agreement-btns {
   margin-top: 1%;
