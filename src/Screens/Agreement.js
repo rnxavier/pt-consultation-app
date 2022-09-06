@@ -10,6 +10,7 @@ const Agreement = () => {
 
   let canvasWidth = null;
   let canvasHeight = null;
+  let r = null;
 
   if (window.innerWidth > 1210) {
     canvasWidth = 500;
@@ -129,7 +130,7 @@ const Agreement = () => {
 
         <div className="signature-pads">
           <div>
-            <div className="signature-pad">
+            <div className="signature-pad first-canvas">
               <SignatureCanvas
                 penColor="black"
                 canvasProps={{ width: canvasWidth, height: canvasHeight }}
