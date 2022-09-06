@@ -1,12 +1,24 @@
 import SignatureCanvas from "react-signature-canvas";
 
 const Agreement = () => {
-  const width = window.innerWidth;
+  // let width = window.innerWidth;
 
   const current = new Date();
   const date = `${current.getDate()}/${
     current.getMonth() + 1
   }/${current.getFullYear()}`;
+
+  let canvasWidth = null
+  let canvasHeight = null
+
+  if(window.innerWidth > 1210) {
+    canvasWidth = 500
+    canvasHeight = 200
+  }
+  else if(window.innerWidth <= 1210) {
+    canvasWidth = 350
+    canvasHeight = 140
+  }
 
   return (
     <>
@@ -121,7 +133,7 @@ const Agreement = () => {
             <div className="signature-pad">
               <SignatureCanvas
                 penColor="black"
-                canvasProps={{ width: 500, height: 200 }}
+                canvasProps={{ width: canvasWidth, height: canvasHeight }}
               />
             </div>
             <p>Client Signature</p>
@@ -130,7 +142,7 @@ const Agreement = () => {
             <div className="signature-pad">
               <SignatureCanvas
                 penColor="black"
-                canvasProps={{ width: 500, height: 200 }}
+                canvasProps={{ width: canvasWidth, height: canvasHeight }}
               />
             </div>
             <p>Trainer Signature</p>
