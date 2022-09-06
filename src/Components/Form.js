@@ -340,7 +340,7 @@ const Form = () => {
     span {
       height: 2px;
       width: 25px;
-      background-color: #66d3fa;
+      background-color: #1b4079;
       margin-bottom: 4px;
       border-radius: 5px;
     }
