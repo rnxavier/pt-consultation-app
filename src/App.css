@@ -116,7 +116,9 @@ form h2 {
 }
 
 @media screen and (max-width: 1210px) {
-
+  .first-canvas {
+    margin-right: 60px;
+  }
 }
 
 .signature-pad {
@@ -228,10 +230,6 @@ color: #fff;
 .centre-txt {
   text-align: center;
 }
-
-
-
-
 
 
 
