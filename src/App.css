@@ -141,20 +141,21 @@ form h2 {
 
 
 /* CLIENTS PAGE */
-.clients-div h1{
+.clients-div h2{
   margin-top: 0;
-  font-weight: 100;
+  font-weight: 500;
   font-size: 1.5rem;
 }
 
-.clients-div-btn {
+.clients-div button {
   cursor: pointer;
   margin-bottom: 1%;
   background-color: #fff;
   padding: 0;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
+
 
 
 
@@ -175,7 +176,12 @@ form h2 {
   display: grid;
   grid-template-columns: auto auto auto auto;
   row-gap: 0.5%;
+  font-size: 1.2rem;
   /* text-align: center; */
+}
+
+.modal-grid h3 {
+  font-weight: 400;
 }
 
 .modal-title h2{
@@ -216,7 +222,7 @@ form h2 {
   height: 80%;
   background:#1b4079;
   border: none;
-color: #fff;
+  color: #fff;
   border-radius: 4px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -230,6 +236,8 @@ color: #fff;
 .centre-txt {
   text-align: center;
 }
+
+
 
 
 

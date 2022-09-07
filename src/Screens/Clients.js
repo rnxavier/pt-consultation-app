@@ -257,10 +257,10 @@ const Clients = () => {
 
           <div className="modal-body">
             <div className="modal-grid centre-txt">
-              <p>MEASUREMENT</p>
-              <p>CURRENT VALUE</p>
-              <p>NEW VALUE</p>
-              <p>UPDATE</p>
+              <h3>Measurement</h3>
+              <h3>Current Value</h3>
+              <h3>New Value</h3>
+              <h3>Update</h3>
 
               <p>Height</p>
               <p>{selectedClient.height}</p>
@@ -475,7 +475,7 @@ const Clients = () => {
 
   return (
     <div className="clients-div">
-      <h1>Clients</h1>
+      <h2>Clients</h2>
 
       {clients.map(({ id, data }) => (
         <div key={id}>
