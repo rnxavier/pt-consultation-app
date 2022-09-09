@@ -79,7 +79,7 @@ const Clients = () => {
       .doc(id)
       .set(
         {
-          muscle: updateMuscle,
+          muscle: updatedMuscle,
         },
         {
           merge: true,
