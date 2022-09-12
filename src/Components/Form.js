@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { useReactToPrint } from "react-to-print";
+import { useState } from "react";
+
 import Clients from "../Screens/Clients";
 import ClientInfo from "../Screens/ClientInfo";
 import Goals from "../Screens/Goals";
@@ -8,13 +8,70 @@ import Agreement from "../Screens/Agreement";
 import Measurements from "../Screens/Measurements";
 import { db } from "../Firebase";
 import Navbar from "./Nav";
+import jsPDF from "jspdf";
 
 const Form = () => {
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-    documentTitle: "Client Measurements",
-  });
+  const clientsPDF = () => {
+    var doc = new jsPDF("p", "pt", "a4");
+    doc.html(document.querySelector("#clientsPDF"), {
+      callback: function (pdf) {
+        var pageCount = doc.internal.getNumberOfPages();
+        pdf.deletePage(pageCount + 1);
+        pdf.save("ClientPage.pdf");
+      },
+    });
+  };
+
+  const infoPDF = () => {
+    var doc = new jsPDF("p", "pt", "a4");
+    doc.html(document.querySelector("#infoPDF"), {
+      callback: function (pdf) {
+        var pageCount = doc.internal.getNumberOfPages();
+        pdf.deletePage(pageCount + 1);
+        pdf.save("ClientInfoPage.pdf");
+      },
+    });
+  };
+  const goalsPDF = () => {
+    var doc = new jsPDF("p", "pt", "a4");
+    doc.html(document.querySelector("#goalsPDF"), {
+      callback: function (pdf) {
+        var pageCount = doc.internal.getNumberOfPages();
+        pdf.deletePage(pageCount + 1);
+        pdf.save("GoalsPage.pdf");
+      },
+    });
+  };
+  const healthPDF = () => {
+    var doc = new jsPDF("p", "pt", "a4");
+    doc.html(document.querySelector("#healthPDF"), {
+      callback: function (pdf) {
+        var pageCount = doc.internal.getNumberOfPages();
+        pdf.deletePage(pageCount + 1);
+        pdf.save("HealthPage.pdf");
+      },
+    });
+  };
+  const agreementPDF = () => {
+    var doc = new jsPDF("p", "pt", "a4");
+    doc.html(document.querySelector("#agreementPDF"), {
+      callback: function (pdf) {
+        var pageCount = doc.internal.getNumberOfPages();
+        pdf.deletePage(pageCount + 1);
+        pdf.save("AgreementPage.pdf");
+      },
+    });
+  };
+  const measurementsPDF = () => {
+    var doc = new jsPDF("p", "pt", "a4");
+    doc.html(document.querySelector("#measurementsPDF"), {
+      callback: function (pdf) {
+        var pageCount = doc.internal.getNumberOfPages();
+        pdf.deletePage(pageCount + 1);
+        pdf.save("MeasurementsPage.pdf");
+      },
+    });
+  };
 
   const setPageZero = () => {
     setPage(0);
@@ -104,19 +161,50 @@ const Form = () => {
   const pageDisplay = () => {
     switch (page) {
       case 0:
-        return <ClientInfo formData={formData} setFormData={setFormData} />;
+        return (
+          <div id="infoPDF">
+            <ClientInfo formData={formData} setFormData={setFormData} />
+          </div>
+        );
+
       case 1:
-        return <Goals formData={formData} setFormData={setFormData} />;
+        return (
+          <div id="goalsPDF">
+            <Goals formData={formData} setFormData={setFormData} />
+          </div>
+        );
+
       case 2:
-        return <Health formData={formData} setFormData={setFormData} />;
+        return (
+          <div id="healthPDF">
+            <Health formData={formData} setFormData={setFormData} />
+          </div>
+        );
       case 3:
-        return <Agreement />;
+        return (
+          <div id="agreementPDF">
+            <Agreement />
+          </div>
+        );
       case 4:
-        return <Measurements formData={formData} setFormData={setFormData} />;
+        return (
+          <div id="measurementsPDF">
+            <Measurements formData={formData} setFormData={setFormData} />
+          </div>
+        );
       case 5:
-        return <Clients />;
+        return (
+          <div id="clientsPDF">
+            <Clients />
+          </div>
+        );
+
       default:
-        return <ClientInfo formData={formData} setFormData={setFormData} />;
+        return (
+          <div id="infoPDF">
+            <ClientInfo formData={formData} setFormData={setFormData} />
+          </div>
+        );
     }
   };
 
@@ -125,7 +213,7 @@ const Form = () => {
       case 0:
         return (
           <div className="button-div">
-            <button className="button" onClick={handlePrint}>
+            <button className="button" onClick={infoPDF}>
               <div className="btn-text">Save as PDF</div>
             </button>
 
@@ -142,7 +230,61 @@ const Form = () => {
         );
 
       case 1:
+        return (
+          <div className="button-div agreement-btns">
+            <button
+              className="button"
+              onClick={() => {
+                setPage((currentPage) => currentPage - 1);
+              }}
+            >
+              <div className="btn-text">Previous</div>
+              <div className="btn-subtext">{formTitles[page - 1]}</div>
+            </button>
+
+            <button className="button" onClick={goalsPDF}>
+              <div className="btn-text">Save as PDF</div>
+            </button>
+
+            <button
+              className="button"
+              onClick={() => {
+                setPage((currentPage) => currentPage + 1);
+              }}
+            >
+              <div className="btn-text">Next</div>
+              <div className="btn-subtext">{formTitles[page + 1]}</div>
+            </button>
+          </div>
+        );
       case 2:
+        return (
+          <div className="button-div agreement-btns">
+            <button
+              className="button"
+              onClick={() => {
+                setPage((currentPage) => currentPage - 1);
+              }}
+            >
+              <div className="btn-text">Previous</div>
+              <div className="btn-subtext">{formTitles[page - 1]}</div>
+            </button>
+
+            <button className="button" onClick={healthPDF}>
+              <div className="btn-text">Save as PDF</div>
+            </button>
+
+            <button
+              className="button"
+              onClick={() => {
+                setPage((currentPage) => currentPage + 1);
+              }}
+            >
+              <div className="btn-text">Next</div>
+              <div className="btn-subtext">{formTitles[page + 1]}</div>
+            </button>
+          </div>
+        );
       case 3:
         return (
           <div className="button-div agreement-btns">
@@ -156,7 +298,7 @@ const Form = () => {
               <div className="btn-subtext">{formTitles[page - 1]}</div>
             </button>
 
-            <button className="button" onClick={handlePrint}>
+            <button className="button" onClick={agreementPDF}>
               <div className="btn-text">Save as PDF</div>
             </button>
 
@@ -185,7 +327,7 @@ const Form = () => {
               <div className="btn-subtext">{formTitles[page - 1]}</div>
             </button>
 
-            <button className="button" onClick={handlePrint}>
+            <button className="button" onClick={measurementsPDF}>
               <div className="btn-text">Save as PDF</div>
             </button>
 
@@ -197,19 +339,9 @@ const Form = () => {
 
       default:
         return (
-          <div className="button-div">
-            <button className="button" onClick={handlePrint}>
+          <div className="single-btn-div">
+            <button className="button" onClick={clientsPDF}>
               <div className="btn-text">Save as PDF</div>
-            </button>
-
-            <button
-              className="button"
-              onClick={() => {
-                setPage((currentPage) => currentPage + 1);
-              }}
-            >
-              <div className="btn-text">Next</div>
-              <div className="btn-subtext">{formTitles[page + 1]}</div>
             </button>
           </div>
         );
@@ -340,6 +472,8 @@ const Form = () => {
     }
   };
 
+  console.log(page);
+
   return (
     <div className="form">
       <Navbar
@@ -351,9 +485,7 @@ const Form = () => {
         setPageFive={setPageFive}
       />
       <div className="form-container">
-        <div className="body" ref={componentRef}>
-          {pageDisplay()}
-        </div>
+        <div className="body">{pageDisplay()}</div>
         <div className="footer">{buttonDisplay()}</div>
       </div>
     </div>

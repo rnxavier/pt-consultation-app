@@ -1,19 +1,13 @@
-import { useRef } from "react";
-import { useReactToPrint } from "react-to-print";
-
 const Modal = (props) => {
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-    documentTitle: "Client Measurements",
-  });
+  //SAVE AS PDF FUNCTION
+
   return (
-    <>
+    <div>
       <div className="close-btn">
         <button onClick={props.handleClick}>X</button>
       </div>
 
-      <div className="modal-container" ref={componentRef}>
+      <div className="modal-container">
         <div className="modal-title">
           <h2>Body Measurements: {props.name}</h2>
         </div>
@@ -178,13 +172,7 @@ const Modal = (props) => {
           </div>
         </div>
       </div>
-
-      <div className="single-btn-div">
-        <button className="button" onClick={handlePrint}>
-          <div className="btn-text">Save as PDF</div>
-        </button>
-      </div>
-    </>
+    </div>
   );
 };
 
