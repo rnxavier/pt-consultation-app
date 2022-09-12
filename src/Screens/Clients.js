@@ -1,9 +1,7 @@
 import { db } from "../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
-
 import Modal from "../Components/Modal";
-// import { handleUpdate } from "../updateFunction";
 
 const Clients = () => {
   //MODAL FUNCTIONS
