@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
-import styled from "styled-components";
 import Clients from "../Screens/Clients";
 import ClientInfo from "../Screens/ClientInfo";
 import Goals from "../Screens/Goals";
@@ -116,6 +115,8 @@ const Form = () => {
         return <Measurements formData={formData} setFormData={setFormData} />;
       case 5:
         return <Clients />;
+      default:
+        return <ClientInfo formData={formData} setFormData={setFormData} />;
     }
   };
 
@@ -190,6 +191,25 @@ const Form = () => {
 
             <button className="button" type="submit" onClick={handleSubmit}>
               <div className="submit-btn-text">Submit</div>
+            </button>
+          </div>
+        );
+
+      default:
+        return (
+          <div className="button-div">
+            <button className="button" onClick={handlePrint}>
+              <div className="btn-text">Save as PDF</div>
+            </button>
+
+            <button
+              className="button"
+              onClick={() => {
+                setPage((currentPage) => currentPage + 1);
+              }}
+            >
+              <div className="btn-text">Next</div>
+              <div className="btn-subtext">{formTitles[page + 1]}</div>
             </button>
           </div>
         );
