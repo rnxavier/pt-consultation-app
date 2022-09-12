@@ -8,6 +8,7 @@ import Health from "../Screens/Health";
 import Agreement from "../Screens/Agreement";
 import Measurements from "../Screens/Measurements";
 import { db } from "../Firebase";
+import Navbar from "./Nav";
 
 const Form = () => {
   const componentRef = useRef();
@@ -15,6 +16,26 @@ const Form = () => {
     content: () => componentRef.current,
     documentTitle: "Client Measurements",
   });
+
+  const setPageZero = () => {
+    setPage(0);
+  };
+  const setPageOne = () => {
+    setPage(1);
+  };
+  const setPageTwo = () => {
+    setPage(2);
+  };
+  const setPageThree = () => {
+    setPage(3);
+  };
+  const setPageFour = () => {
+    setPage(4);
+  };
+
+  const setPageFive = () => {
+    setPage(5);
+  };
 
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
@@ -175,190 +196,47 @@ const Form = () => {
     }
   };
 
-  const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    return (
-      <>
-        <div>
-          <Nav>
-            <Logo href="">
-              Bizzie💪🏾<span>Trainer</span>
-            </Logo>
-            <Hamburger
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              <span />
-              <span />
-              <span />
-            </Hamburger>
-            <Menu isOpen={isOpen}>
-              <MenuLink
-                href=""
-                onClick={() => {
-                  setPage(5);
-                }}
-              >
-                Clients
-              </MenuLink>
-              <MenuLink
-                href=""
-                onClick={() => {
-                  setPage(0);
-                }}
-              >
-                Information
-              </MenuLink>
-              <MenuLink
-                href=""
-                onClick={() => {
-                  setPage(1);
-                }}
-              >
-                Goals
-              </MenuLink>
-              <MenuLink
-                href=""
-                onClick={() => {
-                  setPage(2);
-                }}
-              >
-                Health
-              </MenuLink>
-              <MenuLink
-                href=""
-                onClick={() => {
-                  setPage(3);
-                }}
-              >
-                Agreement
-              </MenuLink>
-              <MenuLink
-                href=""
-                onClick={() => {
-                  setPage(4);
-                }}
-              >
-                Measurements
-              </MenuLink>
-            </Menu>
-          </Nav>
-        </div>
-      </>
-    );
-  };
-
-  const Nav = styled.div`
-    padding: 0 2rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-    @media (max-width: 832px) {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    @media (max-width: 768px) {
-      display: flex;
-      justify-content: space-between;
-    }
-  `;
-
-  const Logo = styled.a`
-    padding: 1rem 0;
-    color: #66d3fa;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.7rem;
-    color: #1b4079;
-
-    @media (max-width: 1140px) {
-      font-size: 1.5rem;
-    }
-
-    @media (max-width: 1010px) {
-      font-size: 1.3rem;
-    }
-
-    span {
-      font-weight: 450;
-      font-size: 1.3rem;
-
-      @media (max-width: 1140px) {
-        font-size: 1.1rem;
-      }
-
-      @media (max-width: 1010px) {
-        font-size: 1rem;
-      }
-    }
-  `;
-
-  const Menu = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
-    @media (max-width: 768px) {
-      overflow: hidden;
-      flex-direction: column;
-      width: 100%;
-      max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
-      transition: max-height 0.3s ease-in;
-    }
-  `;
-
-  const MenuLink = styled.button`
-    padding: 0.4rem 1rem 0rem;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-
-    color: #1b4079;
-    transition: all 0.3s ease-in;
-    border: none;
-    background-color: #fff;
-    font-size: 1.2rem;
-
-    &:hover {
-      color: #66d3fa;
-    }
-
-    @media (max-width: 1140px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 1010px) {
-      font-size: 0.8rem;
-    }
-  `;
-
-  const Hamburger = styled.div`
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-
-    span {
-      height: 2px;
-      width: 25px;
-      background-color: #1b4079;
-      margin-bottom: 4px;
-      border-radius: 5px;
-    }
-
-    @media (max-width: 768px) {
-      display: flex;
-    }
-  `;
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    db.collection("clients")
-      .add({
+    if (
+      formData.name.length === 0 ||
+      formData.gender.length === 0 ||
+      formData.dob.length === 0 ||
+      formData.contactNo.length === 0 ||
+      formData.email.length === 0 ||
+      formData.emergencyContact.length === 0 ||
+      formData.emergencyNo.length === 0 ||
+      formData.bodyParts.length === 0 ||
+      formData.resultsTime.length === 0 ||
+      formData.knowledge.length === 0 ||
+      formData.motivation.length === 0 ||
+      formData.barriers.length === 0 ||
+      formData.help.length === 0 ||
+      formData.chestCon.length === 0 ||
+      formData.diabetes.length === 0 ||
+      formData.epilepsy.length === 0 ||
+      formData.muscleCon.length === 0 ||
+      formData.neckCon.length === 0 ||
+      formData.bloodPressure.length === 0 ||
+      formData.dizziness.length === 0 ||
+      formData.pregnancy.length === 0 ||
+      formData.majorOps.length === 0 ||
+      formData.medication.length === 0 ||
+      formData.temp.length === 0 ||
+      formData.covid.length === 0 ||
+      formData.weight.length === 0 ||
+      formData.bodyFat.length === 0 ||
+      formData.water.length === 0 ||
+      formData.muscle.length === 0 ||
+      formData.physique.length === 0 ||
+      formData.metabolicRate.length === 0 ||
+      formData.metabolicAge.length === 0 ||
+      formData.boneMass.length === 0 ||
+      formData.visceralFat.length === 0
+    ) {
+      alert("Please ensure the form is complete before submitting");
+    } else {
+      db.collection("clients").add({
         name: formData.name,
         gender: formData.gender,
         dob: formData.dob,
@@ -397,59 +275,61 @@ const Form = () => {
         metabolicAge: formData.metabolicAge,
         boneMass: formData.boneMass,
         visceralFat: formData.visceralFat,
-      })
-      .then(() => {
-        alert("Client registered successfully ✅");
-      })
-      .catch((error) => {
-        alert(error.message);
       });
-
-    setFormData({
-      name: "",
-      gender: "",
-      dob: "",
-      contactNo: "",
-      email: "",
-      emergencyContact: "",
-      emergencyNo: "",
-      goals: "",
-      bodyParts: "",
-      resultsTime: "",
-      knowledge: "",
-      motivation: "",
-      barriers: "",
-      help: "",
-      heartCon: "",
-      chestCon: "",
-      diabetes: "",
-      epilepsy: "",
-      muscleCon: "",
-      neckCon: "",
-      bloodPressure: "",
-      dizziness: "",
-      pregnancy: "",
-      majorOps: "",
-      medication: "",
-      temp: "",
-      covid: "",
-      covidDate: "",
-      height: "",
-      weight: "",
-      bodyFat: "",
-      water: "",
-      muscle: "",
-      physique: "",
-      metabolicRate: "",
-      metabolicAge: "",
-      boneMass: "",
-      visceralFat: "",
-    });
+      alert("Client registered successfully ✅");
+      setFormData({
+        name: "",
+        gender: "",
+        dob: "",
+        contactNo: "",
+        email: "",
+        emergencyContact: "",
+        emergencyNo: "",
+        goals: "",
+        bodyParts: "",
+        resultsTime: "",
+        knowledge: "",
+        motivation: "",
+        barriers: "",
+        help: "",
+        heartCon: "",
+        chestCon: "",
+        diabetes: "",
+        epilepsy: "",
+        muscleCon: "",
+        neckCon: "",
+        bloodPressure: "",
+        dizziness: "",
+        pregnancy: "",
+        majorOps: "",
+        medication: "",
+        temp: "",
+        covid: "",
+        covidDate: "",
+        height: "",
+        weight: "",
+        bodyFat: "",
+        water: "",
+        muscle: "",
+        physique: "",
+        metabolicRate: "",
+        metabolicAge: "",
+        boneMass: "",
+        visceralFat: "",
+      });
+    }
   };
 
   return (
     <div className="form">
-      <Navbar />
+      <Navbar
+        setPageZero={setPageZero}
+        setPageOne={setPageOne}
+        setPageTwo={setPageTwo}
+        setPageThree={setPageThree}
+        setPageFour={setPageFour}
+        setPageFive={setPageFive}
+      />
       <div className="form-container">
         <div className="body" ref={componentRef}>
           {pageDisplay()}
