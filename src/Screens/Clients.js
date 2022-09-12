@@ -254,7 +254,7 @@ const Clients = () => {
   };
 
   const [clients, setClients] = useState([]);
-  const [loading, setLoading] = useState(true);
+
   const [id, setId] = useState("");
   const [selectedClient, setSelectedClient] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -289,7 +289,7 @@ const Clients = () => {
 
     if (docSnap.exists()) {
       setSelectedClient(docSnap.data());
-      setLoading(false);
+
       console.log(selectedClient);
     } else {
       // doc.data() will be undefined in this case
