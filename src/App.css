@@ -179,6 +179,11 @@ form h2 {
 
 .modal-grid h3 {
   font-weight: 400;
+  font-size: 100%;
+}
+
+.modal-grid p {
+  font-size: 90%;
 }
 
 .modal-title h2{
