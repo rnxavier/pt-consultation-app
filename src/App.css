@@ -32,7 +32,10 @@ form h2 {
   margin: 8px 0;
   padding: 12px 18px;
   border-radius: 8px;
+  font-style: normal;
 }
+
+
 
 .txtb label {
   display: block;
@@ -95,6 +98,16 @@ form h2 {
   font-size: 100%;
 }
 
+.clients-div-btn {
+  /* color: black; */
+  color: #333;
+  text-transform: uppercase;
+}
+
+.clients-div-btn:focus {
+  color:#66D3FA;
+}
+
 
 /* AGREEMENT PAGE */
 .agreement-div h1 {
@@ -111,24 +124,32 @@ form h2 {
 .signature-pads {
   display: flex;
   justify-content: space-evenly;
-  font-style: italic;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
-@media screen and (max-width: 1210px) {
+/* @media screen and (max-width: 1210px) {
   .first-canvas {
-    margin-right: 60px;
+
   }
-}
+} */
 
 .signature-pad {
   display: block;
-  border: 0.2rem solid #1b4079;;
+  border: 0.1rem solid #1b4079;;
+  border-radius: 8px;
+  padding: 3px;
 }
 
 
 
 .agreement-btns {
   margin-top: 1%;
+}
+
+.health-check-div {
+  font-style: italic;
 }
 
 
