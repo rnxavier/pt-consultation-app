@@ -318,6 +318,8 @@ const Clients = () => {
       {showModal && (
         <Modal
           handleClick={handleClick}
+          email={selectedClient.email}
+          number={selectedClient.contactNo}
           name={selectedClient.name}
           height={selectedClient.height}
           weight={selectedClient.weight}

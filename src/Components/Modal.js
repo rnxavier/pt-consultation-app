@@ -1,17 +1,6 @@
 // import jsPDF from "jspdf";
 
 const Modal = (props) => {
-  // const modalScreenshot = () => {
-  //   var doc = new jsPDF("p", "pt", "a4");
-  //   doc.html(document.querySelector("#clientsModal"), {
-  //     callback: function (pdf) {
-  //       var pageCount = doc.internal.getNumberOfPages();
-  //       pdf.deletePage(pageCount + 1);
-  //       pdf.save("ClientMeasurements.pdf");
-  //     },
-  //   });
-  // };
-
   return (
     <div id="clientsModal">
       <div className="close-btn">
@@ -20,10 +9,17 @@ const Modal = (props) => {
 
       <div className="modal-container">
         <div className="modal-title">
-          <h2>Body Measurements: {props.name}</h2>
+          <h2>{props.name}</h2>
+        </div>
+        <div className="client-info-div">
+          <p>📧 {props.email}</p>
+          <p>📱 {props.number}</p>
         </div>
 
         <div className="modal-body">
+          <div className="modal-title">
+            <h2>Measurements</h2>
+          </div>
           <div className="modal-grid centre-txt">
             <h2>Value</h2>
             <h2>Current</h2>
