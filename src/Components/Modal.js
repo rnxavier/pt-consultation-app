@@ -25,10 +25,10 @@ const Modal = (props) => {
 
         <div className="modal-body">
           <div className="modal-grid centre-txt">
-            <h3>Measurement</h3>
-            <h3>Current Value</h3>
-            <h3>New Value</h3>
-            <h3>Update</h3>
+            <h2>Value</h2>
+            <h2>Current</h2>
+            <h2>New</h2>
+            <h2>Update</h2>
 
             <p>Height</p>
             <p>{props.height}</p>
