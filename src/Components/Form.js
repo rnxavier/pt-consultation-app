@@ -375,16 +375,7 @@ const Form = () => {
       formData.majorOps.length === 0 ||
       formData.medication.length === 0 ||
       formData.temp.length === 0 ||
-      formData.covid.length === 0 ||
-      formData.weight.length === 0 ||
-      formData.bodyFat.length === 0 ||
-      formData.water.length === 0 ||
-      formData.muscle.length === 0 ||
-      formData.physique.length === 0 ||
-      formData.metabolicRate.length === 0 ||
-      formData.metabolicAge.length === 0 ||
-      formData.boneMass.length === 0 ||
-      formData.visceralFat.length === 0
+      formData.covid.length === 0
     ) {
       alert("Please ensure the form is complete before submitting");
     } else {

@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const Goals = ({ formData, setFormData }) => {
   const handleRadio = (e) => {
     const { name } = e.target;

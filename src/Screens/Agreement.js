@@ -10,7 +10,6 @@ const Agreement = () => {
 
   let canvasWidth = null;
   let canvasHeight = null;
-  let r = null;
 
   if (window.innerWidth > 1210) {
     canvasWidth = 500;
