@@ -1,8 +1,19 @@
+// import jsPDF from "jspdf";
+
 const Modal = (props) => {
-  //SAVE AS PDF FUNCTION
+  // const modalScreenshot = () => {
+  //   var doc = new jsPDF("p", "pt", "a4");
+  //   doc.html(document.querySelector("#clientsModal"), {
+  //     callback: function (pdf) {
+  //       var pageCount = doc.internal.getNumberOfPages();
+  //       pdf.deletePage(pageCount + 1);
+  //       pdf.save("ClientMeasurements.pdf");
+  //     },
+  //   });
+  // };
 
   return (
-    <div>
+    <div id="clientsModal">
       <div className="close-btn">
         <button onClick={props.handleClick}>X</button>
       </div>
@@ -170,6 +181,11 @@ const Modal = (props) => {
               +
             </button>
           </div>
+          {/* <div className="single-btn-div screenshot-btn-div">
+            <button className="button screenshot-btn" onClick={modalScreenshot}>
+              Screenshot Measurements
+            </button>
+          </div> */}
         </div>
       </div>
     </div>
