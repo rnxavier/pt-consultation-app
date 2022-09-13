@@ -1,11 +1,14 @@
 import "./App.css";
-
+import Login from "./Screens/Login";
+import Register from "./Screens/Register";
 import Form from "./Components/Form";
 
 function App() {
   return (
     // <Modal />
-    <Form />
+    // <Form />
+    <Login />
+    // <Register />
     // <Router>
     //   <Routes>
     //     <Route path="/" element={<ClientInfo />} />
