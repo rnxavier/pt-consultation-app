@@ -2,6 +2,66 @@
   font-family: 'Roboto', sans-serif;
 }
 
+/* LOGIN */ 
+.login-page {
+  width: 30%;
+  background: rgb(255, 255, 255, 0.9);
+  padding: 50px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000000b3;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.login-page h1{
+  margin-top: 0;
+  font-weight: 100;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.login-page-btns {
+ 
+  display: block;
+  width: 80%;
+  padding: 1% 3%;
+  font-size: 20px;
+  border-radius: 8px ;
+  text-decoration: none;
+  box-shadow: 0 0 10px #808080;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto
+}
+
+.login-btn {
+  margin-top: 5%;
+  background:#1b4079;
+  color: #fff;
+}
+
+
+.register-btn {
+  margin-top: 5%;
+  color:#1b4079;
+  box-shadow: none;
+  border-color:0.5px #1b4079;
+  background: #fff;
+}
+
+.forgot-btn {
+  margin-top: 5%;
+  border: none;
+  background: #fff;
+  color:#1b4079;
+  box-shadow: none;
+  font-weight: 500;
+}
+
+.forgot-btn:hover {
+  color: #66D3FA;
+}
+
 /* FORM */
 
 .form {
