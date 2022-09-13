@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../Context/UserContext";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -7,19 +8,29 @@ const Login = () => {
     navigate("/register");
   };
 
+  const { signInUser, forgotPassword } = useUserContext();
+
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  // const onSubmit = (e) => {
-  //     e.preventDefault();
-  //     const email = emailRef.current.value;
-  //     const password = psdRef.current.value;
-  //     if (email && password) signInUser(email, password);
-  //   };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    if (email && password) signInUser(email, password);
+  };
+
+  const forgotPasswordHandler = () => {
+    const email = emailRef.current.value;
+    if (email)
+      forgotPassword(email).then(() => {
+        emailRef.current.value = "";
+      });
+  };
 
   return (
     <div className="login-page">
-      <form>
+      <form onSubmit={onSubmit}>
         <h1>LOGIN</h1>
 
         <div className="txtb">
@@ -40,7 +51,10 @@ const Login = () => {
           >
             REGISTER
           </button>
-          <button className="login-page-btns forgot-btn">
+          <button
+            onClick={forgotPasswordHandler}
+            className="login-page-btns forgot-btn"
+          >
             Forgot Password
           </button>
         </div>
