@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import Clients from "../Screens/Clients";
 import ClientInfo from "../Screens/ClientInfo";
 import Goals from "../Screens/Goals";
@@ -331,8 +332,15 @@ const Form = () => {
               <div className="btn-text">Save as PDF</div>
             </button>
 
-            <button className="button" type="submit" onClick={handleSubmit}>
-              <div className="submit-btn-text">Submit</div>
+            <button
+              className="button submit-btn"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              <div className="submit-btn-text">
+                <span>Submit</span>
+                <FontAwesomeIcon icon={faPaperPlane} />
+              </div>
             </button>
           </div>
         );

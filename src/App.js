@@ -1,4 +1,5 @@
 import "./App.css";
+
 import SyncLoader from "react-spinners/SyncLoader";
 import { useState } from "react";
 import Form from "./Components/Form";
@@ -12,7 +13,6 @@ function App() {
 
   return (
     <>
-      {" "}
       {error && (
         <div className="error-div">
           <p className="error">{error}</p>

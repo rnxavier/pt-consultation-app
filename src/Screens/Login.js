@@ -1,8 +1,23 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../Context/UserContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(faEyeSlash);
+
+  const handleToggle = () => {
+    if (type === "password") {
+      setIcon(faEye);
+      setType("text");
+    } else {
+      setIcon(faEyeSlash);
+      setType("password");
+    }
+  };
+
   let navigate = useNavigate();
   const routeChange = () => {
     navigate("/register");
@@ -41,9 +56,14 @@ const Login = () => {
           <input type="text" name="email" ref={emailRef} />
         </div>
 
-        <div className="txtb">
+        <div className="txtb ">
           <label>Password</label>
-          <input type="password" name="password" ref={passwordRef} />
+          <div className="login-password">
+            <input type={type} name="password" ref={passwordRef} />
+            <span className="password-toggle" onClick={handleToggle}>
+              <FontAwesomeIcon icon={icon} />
+            </span>
+          </div>
         </div>
 
         <div className="login-footer">

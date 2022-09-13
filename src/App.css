@@ -49,6 +49,10 @@
   width: 100%;
 }
 
+.txtb input[type=password] {
+  width: 100%;
+}
+
 
 
 .txtb input[type="radio"] {
@@ -111,6 +115,14 @@
   color: #66D3FA;
 }
 
+.login-password {
+  display: flex;
+}
+
+.password-toggle {
+  cursor: pointer;
+
+}
 /* FORM */
 
 .form {
@@ -132,8 +144,16 @@ form h1{
 
 form h2 {
   font-weight: 50;
-
   font-size: 1rem;
+}
+
+.submit-btn-text {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.submit-btn-text span {
+  margin-right: 10%;
 }
 
 .txtb {

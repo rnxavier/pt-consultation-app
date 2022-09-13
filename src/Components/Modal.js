@@ -1,4 +1,5 @@
-// import jsPDF from "jspdf";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faMobilePhone } from "@fortawesome/free-solid-svg-icons";
 
 const Modal = (props) => {
   return (
@@ -12,8 +13,12 @@ const Modal = (props) => {
           <h2>{props.name}</h2>
         </div>
         <div className="client-info-div">
-          <p>📧 {props.email}</p>
-          <p>📱 {props.number}</p>
+          <p>
+            <FontAwesomeIcon icon={faEnvelope} /> {props.email}
+          </p>
+          <p>
+            <FontAwesomeIcon icon={faMobilePhone} /> {props.number}
+          </p>
         </div>
 
         <div className="modal-body">

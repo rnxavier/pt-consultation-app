@@ -28,7 +28,7 @@ const Register = () => {
         <div className="login-logo">
           Bizzie💪🏾<span>Trainer</span>
         </div>
-        <h1>REGISTRATION</h1>
+        <h1>REGISTER</h1>
 
         <div className="txtb">
           <label>Full Name</label>
