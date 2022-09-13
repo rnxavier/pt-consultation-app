@@ -1,7 +1,10 @@
 import SignatureCanvas from "react-signature-canvas";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 const Agreement = () => {
   // let width = window.innerWidth;
+  const user = firebase.auth().currentUser;
 
   const current = new Date();
   const date = `${current.getDate()}/${
@@ -154,7 +157,7 @@ const Agreement = () => {
           <div>
             <div className="txtb">
               <label>Trainer Name</label>
-              <input type="text" value="Bismark A. Akuoko" />
+              <input type="text" value={user.displayName} />
             </div>
             <div className="signature-pad">
               <SignatureCanvas

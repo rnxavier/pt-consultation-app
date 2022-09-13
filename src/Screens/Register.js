@@ -8,7 +8,7 @@ const Register = () => {
     navigate("/");
   };
 
-  const { registerUser } = useUserContext;
+  const { registerUser } = useUserContext();
 
   const emailRef = useRef();
   const nameRef = useRef();
@@ -43,7 +43,9 @@ const Register = () => {
         </div>
 
         <div className="login-footer">
-          <button className="login-page-btns login-btn">SIGN UP</button>
+          <button type="submit" className="login-page-btns login-btn">
+            SIGN UP
+          </button>
 
           <button className="login-page-btns forgot-btn" onClick={routeChange}>
             Back to Login Page
