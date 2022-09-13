@@ -1,27 +1,21 @@
 import "./App.css";
-import Login from "./Screens/Login";
-import Register from "./Screens/Register";
+
 import Form from "./Components/Form";
 
 import AuthStack from "./Components/AuthStack";
-import ScreenStack from "./Components/ScreenStack";
+import { useUserContext } from "./Context/UserContext";
 
 function App() {
+  const { loading, error, user } = useUserContext();
+
   return (
-    // <Modal />
-    // <Form />
-    // <Login />
-    <AuthStack />
+    <>
+      {" "}
+      {error && <p className="error">{error}</p>}
+      {loading ? <h2>Loading...</h2> : <> {user ? <Form /> : <AuthStack />} </>}
+    </>
+
     // <Register />
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<ClientInfo />} />
-    //     <Route path="/goals" element={<Goals />} />
-    //     <Route path="/health" element={<Health />} />
-    //     <Route path="/agreement" element={<Agreement />} />
-    //     <Route path="/measurements" element={<Measurements />} />
-    //   </Routes>
-    // </Router>
   );
 }
 
