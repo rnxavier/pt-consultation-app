@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { useUserContext } from "../Context/UserContext";
 
 const Nav = styled.div`
   padding: 0 2rem 1rem;
@@ -108,6 +109,8 @@ const Hamburger = styled.div`
 `;
 
 const Navbar = (props) => {
+  const { logoutUser } = useUserContext();
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -144,6 +147,9 @@ const Navbar = (props) => {
             </MenuLink>
             <MenuLink href="" onClick={props.setPageFour}>
               Measurements
+            </MenuLink>
+            <MenuLink href="" onClick={logoutUser}>
+              Sign Out 👋🏾
             </MenuLink>
           </Menu>
         </Nav>

@@ -44,7 +44,9 @@ const Login = () => {
         </div>
 
         <div className="login-footer">
-          <button className="login-page-btns login-btn">LOGIN</button>
+          <button type="submit" className="login-page-btns login-btn">
+            LOGIN
+          </button>
           <button
             className="login-page-btns register-btn"
             onClick={routeChange}
