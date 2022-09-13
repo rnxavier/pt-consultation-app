@@ -1,5 +1,3 @@
-// import background from "../Images/contact-background.jpeg";
-
 const Health = ({ formData, setFormData }) => {
   const handleRadio = (e) => {
     const { name } = e.target;
@@ -12,7 +10,6 @@ const Health = ({ formData, setFormData }) => {
   };
   return (
     <>
-      {/* <Navbar /> */}
       <form>
         <h1>Health &amp; Injuries</h1>
 
