@@ -13,7 +13,7 @@ import jsPDF from "jspdf";
 
 const Form = () => {
   const clientsPDF = () => {
-    var doc = new jsPDF("p", "pt", "a4");
+    var doc = new jsPDF("p", "pt", "a1");
     doc.html(document.querySelector("#clientsPDF"), {
       callback: function (pdf) {
         var pageCount = doc.internal.getNumberOfPages();
@@ -24,7 +24,7 @@ const Form = () => {
   };
 
   const infoPDF = () => {
-    var doc = new jsPDF("p", "pt", "a4");
+    var doc = new jsPDF("p", "pt", "a1");
     doc.html(document.querySelector("#infoPDF"), {
       callback: function (pdf) {
         var pageCount = doc.internal.getNumberOfPages();
@@ -34,7 +34,7 @@ const Form = () => {
     });
   };
   const goalsPDF = () => {
-    var doc = new jsPDF("p", "pt", "a4");
+    var doc = new jsPDF("p", "pt", "a1");
     doc.html(document.querySelector("#goalsPDF"), {
       callback: function (pdf) {
         var pageCount = doc.internal.getNumberOfPages();
@@ -44,7 +44,7 @@ const Form = () => {
     });
   };
   const healthPDF = () => {
-    var doc = new jsPDF("p", "pt", "a4");
+    var doc = new jsPDF("p", "pt", "a1");
     doc.html(document.querySelector("#healthPDF"), {
       callback: function (pdf) {
         var pageCount = doc.internal.getNumberOfPages();
@@ -54,7 +54,7 @@ const Form = () => {
     });
   };
   const agreementPDF = () => {
-    var doc = new jsPDF("p", "pt", "a4");
+    var doc = new jsPDF("p", "pt", "a1");
     doc.html(document.querySelector("#agreementPDF"), {
       callback: function (pdf) {
         var pageCount = doc.internal.getNumberOfPages();
@@ -64,7 +64,7 @@ const Form = () => {
     });
   };
   const measurementsPDF = () => {
-    var doc = new jsPDF("p", "pt", "a4");
+    var doc = new jsPDF("p", "pt", "a1");
     doc.html(document.querySelector("#measurementsPDF"), {
       callback: function (pdf) {
         var pageCount = doc.internal.getNumberOfPages();
