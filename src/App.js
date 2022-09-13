@@ -3,6 +3,9 @@ import Login from "./Screens/Login";
 import Register from "./Screens/Register";
 import Form from "./Components/Form";
 
+import AuthStack from "./Components/AuthStack";
+import ScreenStack from "./Components/ScreenStack";
+
 function App() {
   return (
     // <Modal />
