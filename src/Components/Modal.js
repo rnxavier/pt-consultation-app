@@ -177,11 +177,6 @@ const Modal = (props) => {
               +
             </button>
           </div>
-          {/* <div className="single-btn-div screenshot-btn-div">
-            <button className="button screenshot-btn" onClick={modalScreenshot}>
-              Screenshot Measurements
-            </button>
-          </div> */}
         </div>
       </div>
     </div>
