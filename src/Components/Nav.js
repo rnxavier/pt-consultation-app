@@ -88,6 +88,12 @@ const MenuLink = styled.button`
   @media (max-width: 1010px) {
     font-size: 0.8rem;
   }
+
+  span {
+    @media (max-width: 795px) {
+      display: none;
+    }
+  }
 `;
 
 const Hamburger = styled.div`
@@ -149,7 +155,7 @@ const Navbar = (props) => {
               Measurements
             </MenuLink>
             <MenuLink className="sign-out-btn" href="" onClick={logoutUser}>
-              Sign Out👋🏾
+              Logout<span>👋🏾</span>
             </MenuLink>
           </Menu>
         </Nav>

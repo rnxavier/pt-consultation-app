@@ -6,6 +6,12 @@
   margin-bottom: 0.6%;
 }
 
+.loading-div {
+  text-align: center;
+  margin-top: 50%;
+
+}
+
 /* LOGIN */ 
 .login-logo {
   font-weight: 500;
@@ -22,14 +28,14 @@
 
 
 .login-page {
-  width: 30%;
+  width: 80%;
   background: rgb(255, 255, 255, 0.9);
   padding: 50px 40px;
   border-radius: 8px;
   box-shadow: 0 0 20px #000000b3;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
 
 }
 .login-page h1{
