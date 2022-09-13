@@ -31,6 +31,9 @@ const Login = () => {
   return (
     <div className="login-page">
       <form onSubmit={onSubmit}>
+        <div className="login-logo">
+          Bizzie💪🏾<span>Trainer</span>
+        </div>
         <h1>LOGIN</h1>
 
         <div className="txtb">

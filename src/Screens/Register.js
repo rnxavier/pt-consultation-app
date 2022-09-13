@@ -25,6 +25,9 @@ const Register = () => {
   return (
     <div className="login-page">
       <form onSubmit={onSubmit}>
+        <div className="login-logo">
+          Bizzie💪🏾<span>Trainer</span>
+        </div>
         <h1>REGISTRATION</h1>
 
         <div className="txtb">
