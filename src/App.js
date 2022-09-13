@@ -11,7 +11,11 @@ function App() {
   return (
     <>
       {" "}
-      {error && <p className="error">{error}</p>}
+      {error && (
+        <div className="error-div">
+          <p className="error">{error}</p>
+        </div>
+      )}
       {loading ? <h2>Loading...</h2> : <> {user ? <Form /> : <AuthStack />} </>}
     </>
 
