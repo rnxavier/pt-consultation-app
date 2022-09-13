@@ -1,17 +1,29 @@
+import { useRef } from "react";
+
 const Login = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  // const onSubmit = (e) => {
+  //     e.preventDefault();
+  //     const email = emailRef.current.value;
+  //     const password = psdRef.current.value;
+  //     if (email && password) signInUser(email, password);
+  //   };
+
   return (
     <div className="login-page">
-      <form>
+      <form onSubmit={onSubmit}>
         <h1>LOGIN</h1>
-        {/* <img src="/maskable.png" alt="" /> */}
+
         <div className="txtb">
           <label>Email Address</label>
-          <input type="text" name="email" />
+          <input type="text" name="email" ref={emailRef} />
         </div>
 
         <div className="txtb">
           <label>Password</label>
-          <input type="password" name="password" />
+          <input type="password" name="password" ref={passwordRef} />
         </div>
 
         <div className="login-footer">
