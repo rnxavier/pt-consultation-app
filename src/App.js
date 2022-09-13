@@ -10,7 +10,8 @@ function App() {
   return (
     // <Modal />
     // <Form />
-    <Login />
+    // <Login />
+    <AuthStack />
     // <Register />
     // <Router>
     //   <Routes>

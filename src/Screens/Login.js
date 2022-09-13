@@ -1,6 +1,12 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    navigate("/register");
+  };
+
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -13,7 +19,7 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <form onSubmit={onSubmit}>
+      <form>
         <h1>LOGIN</h1>
 
         <div className="txtb">
@@ -28,7 +34,12 @@ const Login = () => {
 
         <div className="login-footer">
           <button className="login-page-btns login-btn">LOGIN</button>
-          <button className="login-page-btns register-btn">REGISTER</button>
+          <button
+            className="login-page-btns register-btn"
+            onClick={routeChange}
+          >
+            REGISTER
+          </button>
           <button className="login-page-btns forgot-btn">
             Forgot Password
           </button>

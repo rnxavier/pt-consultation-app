@@ -7,7 +7,7 @@ const AuthStack = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/registration" element={<Register />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );
