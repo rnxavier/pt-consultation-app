@@ -148,8 +148,8 @@ const Navbar = (props) => {
             <MenuLink href="" onClick={props.setPageFour}>
               Measurements
             </MenuLink>
-            <MenuLink href="" onClick={logoutUser}>
-              Sign Out 👋🏾
+            <MenuLink className="sign-out-btn" href="" onClick={logoutUser}>
+              Sign Out👋🏾
             </MenuLink>
           </Menu>
         </Nav>
