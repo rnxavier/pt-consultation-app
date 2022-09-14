@@ -68,7 +68,7 @@ const ClientInfo = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Contact Number</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.contactNo}
             onChange={(e) => {
@@ -81,7 +81,7 @@ const ClientInfo = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Email Address</label>
           <input
-            type="text"
+            type="email"
             name=""
             value={formData.email}
             onChange={(e) => {
@@ -107,7 +107,7 @@ const ClientInfo = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Emergency Contact Number</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.emergencyNo}
             onChange={(e) => {
