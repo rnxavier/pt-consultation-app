@@ -358,6 +358,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    validate(formData);
     if (
       formData.name.length === 0 ||
       formData.gender.length === 0 ||
