@@ -1,5 +1,3 @@
-// import background from "../Images/contact-background.jpeg";
-
 const ClientInfo = ({ formData, setFormData }) => {
   const handleRadio = (e) => {
     const { name } = e.target;
@@ -8,7 +6,6 @@ const ClientInfo = ({ formData, setFormData }) => {
 
   return (
     <>
-      {/* <Navbar /> */}
       <form>
         <h1>Personal Information</h1>
         <div className="txtb">
@@ -116,13 +113,6 @@ const ClientInfo = ({ formData, setFormData }) => {
             required
           />
         </div>
-
-        {/* <div className="single-button-div">
-          <a className="button" href="/goals">
-            <div className="btn-text">Next</div>
-            <div className="btn-subtext">Client Goals</div>
-          </a>
-        </div> */}
       </form>
     </>
   );

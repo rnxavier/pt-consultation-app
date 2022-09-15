@@ -6,7 +6,6 @@ const Goals = ({ formData, setFormData }) => {
 
   return (
     <>
-      {/* <Navbar /> */}
       <form>
         <h1>Goals &amp; Motivation</h1>
 
@@ -209,18 +208,6 @@ const Goals = ({ formData, setFormData }) => {
             required
           />
         </div>
-
-        {/* <div className="button-div">
-          <a className="button" href="/">
-            <div className="btn-text">Previous</div>
-            <div className="btn-subtext">Client Information</div>
-          </a>
-
-          <a className="button" href="/health">
-            <div className="btn-text">Next</div>
-            <div className="btn-subtext">Client Health</div>
-          </a>
-        </div> */}
       </form>
     </>
   );

@@ -3,7 +3,6 @@
 const Measurements = ({ formData, setFormData }) => {
   return (
     <>
-      {/* <Navbar /> */}
       <form>
         <h1>Initial Measurements</h1>
 
@@ -126,17 +125,6 @@ const Measurements = ({ formData, setFormData }) => {
             }}
           />
         </div>
-
-        {/* <div className="button-div">
-          <a className="button" href="/agreement">
-            <div className="btn-text">Previous</div>
-            <div className="btn-subtext">Agreement</div>
-          </a>
-
-          <a className="button" href="/agreement">
-            <div className="submit-btn-text">Submit</div>
-          </a>
-        </div> */}
       </form>
     </>
   );
