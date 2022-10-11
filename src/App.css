@@ -164,8 +164,6 @@ form h2 {
   font-style: normal;
 }
 
-
-
 .txtb label {
   display: block;
   text-align: left;
@@ -256,6 +254,11 @@ form h2 {
   color: #333;
   text-transform: uppercase;
   font-size: 14px;
+}
+
+.red-underline {
+  color: red;
+  text-decoration: underline;
 }
 
 /* @media screen and (max-width: 1210px) {
