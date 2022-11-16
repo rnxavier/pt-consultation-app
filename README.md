@@ -13,8 +13,6 @@ Technologies used:
 - XCode iOS Simulator
 - Cloud Firestore
 
-https://user-images.githubusercontent.com/100284595/200348410-bec3c04e-daea-44ff-80f4-4c25237c402b.mov
-
 ## Requirements
 
 To run this project on your local machine, ensure you have the following things installed:
@@ -29,7 +27,7 @@ Clone the repository into your desired workspace using the command
 
 `git clone https://github.com/rnxavier/ptApp.git`
 
-Navigate into the ptContactForm root directory and install the dependencies using
+Navigate into the ptApp root directory and install the dependencies using
 
 `npm install`
 
