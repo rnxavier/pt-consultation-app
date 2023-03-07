@@ -1,5 +1,5 @@
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .sign-out-btn {
@@ -9,23 +9,21 @@
 .loading-div {
   text-align: center;
   margin-top: 50%;
-
 }
 
-/* LOGIN */ 
+/* LOGIN */
 .login-logo {
   font-weight: 500;
   font-size: 3rem;
   text-align: center;
   margin-bottom: 5%;
-  color: #1b4079;
+  color: #95c128;
 }
 
 .login-logo span {
   font-weight: 500;
   font-size: 2.6rem;
 }
-
 
 .login-page {
   width: 80%;
@@ -36,24 +34,21 @@
   margin: auto;
   margin-top: 10%;
   margin-bottom: 10%;
-
 }
-.login-page h1{
+.login-page h1 {
   margin-top: 0;
   font-weight: 100;
   font-size: 1.5rem;
   text-align: center;
 }
 
-.txtb input[type=text] {
+.txtb input[type="text"] {
   width: 100%;
 }
 
-.txtb input[type=password] {
+.txtb input[type="password"] {
   width: 100%;
 }
-
-
 
 .txtb input[type="radio"] {
   margin-right: 0;
@@ -65,8 +60,8 @@
   width: 80%;
   padding: 1% 3%;
   font-size: 20px;
-  border-radius: 8px ;
-  border: 2px solid #1b4079;
+  border-radius: 8px;
+  border: 2px solid #95c128;
   text-decoration: none;
   box-shadow: 0 0 10px #808080;
   text-align: center;
@@ -76,7 +71,7 @@
 
 .login-btn {
   margin-top: 5%;
-  background:#1b4079;
+  background: #95c128;
   color: #fff;
 }
 
@@ -97,7 +92,7 @@
 
 .register-btn {
   margin-top: 5%;
-  color:#1b4079;
+  color: #95c128;
   box-shadow: none;
   background: #fff;
 }
@@ -106,13 +101,13 @@
   margin-top: 5%;
   border: none;
   background: #fff;
-  color:#1b4079;
+  color: #95c128;
   box-shadow: none;
   font-weight: 500;
 }
 
 .forgot-btn:hover {
-  color: #66D3FA;
+  color: #66d3fa;
 }
 
 .login-password {
@@ -121,7 +116,6 @@
 
 .password-toggle {
   cursor: pointer;
-
 }
 /* FORM */
 
@@ -136,7 +130,7 @@
   margin-bottom: 10%;
 }
 
-form h1{
+form h1 {
   margin-top: 0;
   font-weight: 100;
   font-size: 1.5rem;
@@ -172,8 +166,8 @@ form h2 {
   font-size: 14px;
 }
 
-
-.txtb input, .txtb textarea {
+.txtb input,
+.txtb textarea {
   border: none;
   background: none;
   outline: none;
@@ -189,12 +183,12 @@ form h2 {
 }
 
 .button {
-  background:#1b4079;
+  background: #95c128;
   padding: 1% 3%;
   color: #fff;
   margin-top: 8px;
   border-radius: 8px;
-  border: #66D3FA;
+  border: #66d3fa;
   text-decoration: none;
   box-shadow: 0 0 10px #808080;
   text-align: left;
@@ -202,23 +196,20 @@ form h2 {
 }
 
 @media screen and (max-width: 479px) {
-
   .button {
     font-size: 0.6rem;
     /* box-shadow: 0 0 3px #808080; */
   }
 }
 
-
 .submit-btn-text {
   font-weight: 700;
   font-size: 150%;
-  
 }
 
 .btn-text {
- font-weight: 700;
- font-size: 150%;
+  font-weight: 700;
+  font-size: 150%;
 }
 
 .btn-subtext {
@@ -232,9 +223,8 @@ form h2 {
 }
 
 .clients-div-btn:focus {
-  color:#66D3FA;
+  color: #66d3fa;
 }
-
 
 /* AGREEMENT PAGE */
 .agreement-div h1 {
@@ -269,12 +259,10 @@ form h2 {
 
 .signature-pad {
   display: block;
-  border: 0.1rem solid #1b4079;;
+  border: 0.1rem solid #95c128;
   border-radius: 8px;
   padding: 3px;
 }
-
-
 
 .agreement-btns {
   margin-top: 1%;
@@ -284,16 +272,13 @@ form h2 {
   font-style: italic;
 }
 
-
-
 /* HEALTH PAGE */
 .comments {
   margin-top: 1%;
 }
 
-
 /* CLIENTS PAGE */
-.clients-div h2{
+.clients-div h2 {
   /* margin-top: 0;
   font-weight: 500;
   font-size: 1.5rem; */
@@ -309,7 +294,6 @@ form h2 {
   /* padding: 0; */
   border: none;
   font-size: 1rem;
-
 }
 
 /* MODAL */
@@ -333,14 +317,11 @@ form h2 {
   /* text-align: center; */
 }
 
-
-
 .modal-grid h2 {
   color: #333;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
-
 }
 
 .modal-grid p {
@@ -350,7 +331,7 @@ form h2 {
   font-weight: 400;
 }
 
-.modal-title h2{
+.modal-title h2 {
   text-align: center;
   margin-top: 0;
   font-weight: 400;
@@ -391,14 +372,13 @@ form h2 {
 
 .new-measurement-txtb ::placeholder {
   font-size: 1rem;
-  text-align:start;
-
+  text-align: start;
 }
 
 .update-btn {
   /* width: 40%; */
   height: 80%;
-  background:#1b4079;
+  background: #95c128;
   border: none;
   color: #fff;
   border-radius: 8px;
@@ -426,8 +406,3 @@ form h2 {
 .right-txt {
   text-align: end;
 }
-
-
-
-
-
