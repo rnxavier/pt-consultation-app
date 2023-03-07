@@ -111,9 +111,9 @@
   font-weight: 500;
 }
 
-.forgot-btn:hover {
+/* .forgot-btn:hover {
   color: #66d3fa;
-}
+} */
 
 .login-password {
   display: flex;
@@ -193,7 +193,7 @@ form h2 {
   color: #fff;
   margin-top: 8px;
   border-radius: 8px;
-  border: #66d3fa;
+  border: #95c128;
   text-decoration: none;
   box-shadow: 0 0 10px #808080;
   text-align: left;
@@ -227,9 +227,9 @@ form h2 {
   text-transform: uppercase;
 }
 
-.clients-div-btn:focus {
+/* .clients-div-btn:focus {
   color: #66d3fa;
-}
+} */
 
 /* AGREEMENT PAGE */
 .agreement-div h1 {
@@ -243,17 +243,17 @@ form h2 {
   font-size: 1rem;
 }
 
+.agreement-div span {
+  color: red;
+  text-decoration: underline;
+}
+
 .signature-pads {
   display: flex;
   justify-content: space-evenly;
   color: #333;
   text-transform: uppercase;
   font-size: 14px;
-}
-
-.red-underline {
-  color: red;
-  text-decoration: underline;
 }
 
 /* @media screen and (max-width: 1210px) {

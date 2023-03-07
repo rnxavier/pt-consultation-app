@@ -6,8 +6,7 @@ import logo from "../Screens/bizLogo.PNG";
 const Nav = styled.div`
   padding: 0 2rem 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 
   @media (max-width: 832px) {
@@ -22,7 +21,6 @@ const Nav = styled.div`
 `;
 
 const Logo = styled.a`
-  /* padding: 1rem 0; */
   text-align: center;
 
   @media (max-width: 1140px) {
@@ -35,21 +33,8 @@ const Logo = styled.a`
 
   img {
     width: 40%;
-    height: 40%;
+    height: 80%;
   }
-
-  /* span {
-    font-weight: 450;
-    font-size: 1.3rem;
-
-    @media (max-width: 1140px) {
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 1010px) {
-      font-size: 1rem;
-    }
-  } */
 `;
 
 const Menu = styled.div`
@@ -78,10 +63,6 @@ const MenuLink = styled.button`
   border: none;
   background-color: #fff;
   font-size: 1.2rem;
-
-  &:hover {
-    color: #66d3fa;
-  }
 
   @media (max-width: 1140px) {
     font-size: 1rem;
