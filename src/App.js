@@ -9,7 +9,7 @@ import { useUserContext } from "./Context/UserContext";
 
 function App() {
   const { loading, error, user } = useUserContext();
-  const [colour, setColour] = useState("#1b4079");
+  const [colour, setColour] = useState("#95c128");
 
   return (
     <>
