@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../Context/UserContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import logo from "./bizLogo.PNG";
 
 const Login = () => {
   const [type, setType] = useState("password");
@@ -47,7 +48,8 @@ const Login = () => {
     <div className="login-page">
       <form onSubmit={onSubmit}>
         <div className="login-logo">
-          Bizzie💪🏾<span>Trainer</span>
+          <img src={logo} />
+          {/* Bizzie💪🏾<span>Trainer</span> */}
         </div>
         <h1>LOGIN</h1>
 

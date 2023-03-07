@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useUserContext } from "../Context/UserContext";
+import logo from "../Screens/bizLogo.PNG";
 
 const Nav = styled.div`
   padding: 0 2rem 1rem;
@@ -21,12 +22,8 @@ const Nav = styled.div`
 `;
 
 const Logo = styled.a`
-  padding: 1rem 0;
-  color: #66d3fa;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 1.7rem;
-  color: #1b4079;
+  /* padding: 1rem 0; */
+  text-align: center;
 
   @media (max-width: 1140px) {
     font-size: 1.5rem;
@@ -36,7 +33,12 @@ const Logo = styled.a`
     font-size: 1.3rem;
   }
 
-  span {
+  img {
+    width: 40%;
+    height: 40%;
+  }
+
+  /* span {
     font-weight: 450;
     font-size: 1.3rem;
 
@@ -47,7 +49,7 @@ const Logo = styled.a`
     @media (max-width: 1010px) {
       font-size: 1rem;
     }
-  }
+  } */
 `;
 
 const Menu = styled.div`
@@ -71,7 +73,7 @@ const MenuLink = styled.button`
   text-align: center;
   text-decoration: none;
 
-  color: #1b4079;
+  color: #95c128;
   transition: all 0.3s ease-in;
   border: none;
   background-color: #fff;
@@ -104,7 +106,7 @@ const Hamburger = styled.div`
   span {
     height: 2px;
     width: 25px;
-    background-color: #1b4079;
+    background-color: #95c128;
     margin-bottom: 4px;
     border-radius: 5px;
   }
@@ -124,7 +126,8 @@ const Navbar = (props) => {
       <div>
         <Nav>
           <Logo href="">
-            Bizzie💪🏾<span>Trainer</span>
+            <img src={logo} />
+            {/* Bizzie💪🏾<span>Trainer</span> */}
           </Logo>
           <Hamburger
             onClick={() => {
