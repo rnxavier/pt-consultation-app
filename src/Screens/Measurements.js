@@ -9,7 +9,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Height</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.height}
             onChange={(e) => {
@@ -21,7 +21,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Weight</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.weight}
             onChange={(e) => {
@@ -33,7 +33,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Body Fat</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.bodyFat}
             onChange={(e) => {
@@ -45,7 +45,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Water</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.water}
             onChange={(e) => {
@@ -57,7 +57,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Muscle</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.muscle}
             onChange={(e) => {
@@ -81,7 +81,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Metabolic Rate</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.metabolicRate}
             onChange={(e) => {
@@ -93,7 +93,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Metabolic Age</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.metabolicAge}
             onChange={(e) => {
@@ -105,7 +105,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Bone Mass</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.boneMass}
             onChange={(e) => {
@@ -117,7 +117,7 @@ const Measurements = ({ formData, setFormData }) => {
         <div className="txtb">
           <label>Visceral Fat</label>
           <input
-            type="text"
+            type="number"
             name=""
             value={formData.visceralFat}
             onChange={(e) => {
