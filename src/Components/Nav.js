@@ -70,7 +70,7 @@ const Menu = styled.div`
 const MenuLink = styled.button`
   padding: 0.4rem 1rem 0rem;
   cursor: pointer;
-  text-align: center;
+
   text-decoration: none;
 
   color: #95c128;
@@ -122,48 +122,45 @@ const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <div>
-        <Nav>
-          <Logo href="">
-            <img src={logo} />
-            {/* Bizzie💪🏾<span>Trainer</span> */}
-          </Logo>
-          <Hamburger
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-          >
-            <span />
-            <span />
-            <span />
-          </Hamburger>
-          <Menu isOpen={isOpen}>
-            <MenuLink href="" onClick={props.setPageFive}>
-              Clients
-            </MenuLink>
-            <MenuLink href="" onClick={props.setPageZero}>
-              Information
-            </MenuLink>
-            <MenuLink href="" onClick={props.setPageOne}>
-              Goals
-            </MenuLink>
-            <MenuLink href="" onClick={props.setPageTwo}>
-              Health
-            </MenuLink>
-            <MenuLink href="" onClick={props.setPageThree}>
-              Agreement
-            </MenuLink>
-            <MenuLink href="" onClick={props.setPageFour}>
-              Measurements
-            </MenuLink>
-            <MenuLink className="sign-out-btn" href="" onClick={logoutUser}>
-              Logout<span>👋🏾</span>
-            </MenuLink>
-          </Menu>
-        </Nav>
-      </div>
-    </>
+    <div>
+      <Nav>
+        <Logo href="">
+          <img src={logo} alt="logo" />
+        </Logo>
+        <Hamburger
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          <span />
+          <span />
+          <span />
+        </Hamburger>
+        <Menu isOpen={isOpen}>
+          <MenuLink href="" onClick={props.setPageFive}>
+            Clients
+          </MenuLink>
+          <MenuLink href="" onClick={props.setPageZero}>
+            Information
+          </MenuLink>
+          <MenuLink href="" onClick={props.setPageOne}>
+            Goals
+          </MenuLink>
+          <MenuLink href="" onClick={props.setPageTwo}>
+            Health
+          </MenuLink>
+          <MenuLink href="" onClick={props.setPageThree}>
+            Agreement
+          </MenuLink>
+          <MenuLink href="" onClick={props.setPageFour}>
+            Measurements
+          </MenuLink>
+          <MenuLink className="sign-out-btn" href="" onClick={logoutUser}>
+            Logout<span>👋🏾</span>
+          </MenuLink>
+        </Menu>
+      </Nav>
+    </div>
   );
 };
 

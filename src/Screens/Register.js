@@ -45,6 +45,11 @@ const Register = () => {
           <input type="password" name="password" ref={passwordRef} />
         </div>
 
+        <div className="txtb">
+          <label>Confirm Password</label>
+          <input type="password" name="password" ref={passwordRef} />
+        </div>
+
         <div className="login-footer">
           <button type="submit" className="login-page-btns login-btn">
             SIGN UP
