@@ -48,8 +48,7 @@ const Login = () => {
     <div className="login-page">
       <form onSubmit={onSubmit}>
         <div className="login-logo">
-          <img src={logo} />
-          {/* Bizzie💪🏾<span>Trainer</span> */}
+          <img src={logo} alt="" />
         </div>
         <h1>LOGIN</h1>
 
