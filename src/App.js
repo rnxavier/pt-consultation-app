@@ -6,6 +6,7 @@ import Form from "./Components/Form";
 
 import AuthStack from "./Components/AuthStack";
 import { useUserContext } from "./Context/UserContext";
+import MainStack from "./Components/MainStack";
 
 function App() {
   const { loading, error, user } = useUserContext();
@@ -23,11 +24,9 @@ function App() {
           <SyncLoader loading={loading} color={colour} size={50} />
         </div>
       ) : (
-        <> {user ? <Form /> : <AuthStack />} </>
+        <> {user ? <MainStack /> : <AuthStack />} </>
       )}
     </>
-
-    // <Register />
   );
 }
 

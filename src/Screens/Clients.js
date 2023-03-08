@@ -2,8 +2,10 @@ import { db } from "../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import Modal from "../Components/Modal";
+import { useNavigate } from "react-router-dom";
 
 const Clients = () => {
+  const navigate = useNavigate("/clientDetails");
   //MODAL FUNCTIONS
   const handleClick = () => {
     setShowModal(false);
@@ -312,6 +314,13 @@ const Clients = () => {
             }}
           >
             {data.name}
+          </button>
+          <button
+            onClick={() => {
+              navigate("/clientDetails");
+            }}
+          >
+            Client Page
           </button>
         </div>
       ))}
