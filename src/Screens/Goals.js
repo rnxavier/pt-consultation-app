@@ -47,7 +47,7 @@ const Goals = ({ formData, setFormData }) => {
             onChange={handleRadio}
             checked={formData.resultsTime === "Option 1"}
           />{" "}
-          Option 1
+          4 weeks
           <input
             type="radio"
             value="Option 2"
@@ -55,7 +55,7 @@ const Goals = ({ formData, setFormData }) => {
             onChange={handleRadio}
             checked={formData.resultsTime === "Option 2"}
           />{" "}
-          Option 2
+          6 weeks
           <input
             type="radio"
             value="Option 3"
@@ -63,7 +63,7 @@ const Goals = ({ formData, setFormData }) => {
             onChange={handleRadio}
             checked={formData.resultsTime === "Option 3"}
           />{" "}
-          Option 3
+          3 months
           <input
             type="radio"
             value="Option 4"
@@ -71,7 +71,7 @@ const Goals = ({ formData, setFormData }) => {
             onChange={handleRadio}
             checked={formData.resultsTime === "Option 4"}
           />{" "}
-          Option 4
+          12 months
           <input
             type="radio"
             value="Option 5"
@@ -79,7 +79,7 @@ const Goals = ({ formData, setFormData }) => {
             onChange={handleRadio}
             checked={formData.resultsTime === "Option 5"}
           />{" "}
-          Option 5
+          18 months
         </div>
 
         <div className="txtb">
