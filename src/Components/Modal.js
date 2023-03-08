@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faMobilePhone } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Modal = (props) => {
+  const navigate = useNavigate();
   return (
     <div id="clientsModal">
       <div className="close-btn">
@@ -12,6 +14,13 @@ const Modal = (props) => {
         <div className="modal-title">
           <h2>{props.name}</h2>
         </div>
+        <button
+          onClick={() => {
+            navigate("/clientDetails");
+          }}
+        >
+          Client Page
+        </button>
         <div className="client-info-div">
           <p>
             <FontAwesomeIcon icon={faEnvelope} /> {props.email}

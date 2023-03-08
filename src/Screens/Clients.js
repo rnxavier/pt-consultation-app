@@ -1,11 +1,11 @@
 import { db } from "../Firebase";
 import { doc, getDoc } from "firebase/firestore";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Modal from "../Components/Modal";
 import { useNavigate } from "react-router-dom";
+import { ClientContext } from "../Context/ClientContext";
 
 const Clients = () => {
-  const navigate = useNavigate("/clientDetails");
   //MODAL FUNCTIONS
   const handleClick = () => {
     setShowModal(false);
@@ -255,7 +255,8 @@ const Clients = () => {
 
   const [clients, setClients] = useState([]);
 
-  const [id, setId] = useState("");
+  // const [id, setId] = useState("");
+  const { id, setId } = useContext(ClientContext);
   const [selectedClient, setSelectedClient] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [updatedHeight, setUpdatedHeight] = useState("");
@@ -314,13 +315,6 @@ const Clients = () => {
             }}
           >
             {data.name}
-          </button>
-          <button
-            onClick={() => {
-              navigate("/clientDetails");
-            }}
-          >
-            Client Page
           </button>
         </div>
       ))}
