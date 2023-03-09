@@ -143,6 +143,7 @@ form h2 {
 
 .client-details-form input {
   border: none;
+  width: 100%;
 }
 
 .client-details-form label {
@@ -287,9 +288,6 @@ form h2 {
 
 /* CLIENTS PAGE */
 .clients-div h2 {
-  /* margin-top: 0;
-  font-weight: 500;
-  font-size: 1.5rem; */
   margin-top: 0;
   font-weight: 100;
   font-size: 1.5rem;
@@ -297,9 +295,7 @@ form h2 {
 
 .clients-div-btn {
   cursor: pointer;
-  /* margin-bottom: 1%; */
   background-color: #fff;
-  /* padding: 0; */
   border: none;
   font-size: 1rem;
 }

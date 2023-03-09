@@ -54,7 +54,7 @@ const Login = () => {
 
         <div className="txtb">
           <label>Email Address</label>
-          <input type="text" name="email" ref={emailRef} />
+          <input type="email" name="email" ref={emailRef} />
         </div>
 
         <div className="txtb ">

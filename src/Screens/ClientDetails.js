@@ -80,6 +80,10 @@ const ClientDetails = () => {
             <input name="contactNo" value={selectedClient.contactNo} readOnly />
           </div>
           <div>
+            <label>Email Address</label>
+            <input name="email" value={selectedClient.email} readOnly />
+          </div>
+          <div>
             <label>Emergency Contact</label>
             <input
               name="emergencyContact"
@@ -229,8 +233,8 @@ const ClientDetails = () => {
                   readOnly
                 />
                 <input
-                  name="muscleConComments"
-                  value={selectedClient.muscleConComments}
+                  name="muscleComments"
+                  value={selectedClient.muscleComments}
                   readOnly
                 />
               </div>
@@ -247,8 +251,8 @@ const ClientDetails = () => {
                 <label>Neck Conditions</label>
                 <input name="neckCon" value={selectedClient.neckCon} readOnly />
                 <input
-                  name="neckConComments"
-                  value={selectedClient.neckConComments}
+                  name="neckComments"
+                  value={selectedClient.neckComments}
                   readOnly
                 />
               </div>
@@ -396,8 +400,8 @@ const ClientDetails = () => {
                 <label>COVID</label>
                 <input name="covid" value={selectedClient.covid} readOnly />
                 <input
-                  name="covidComments"
-                  value={selectedClient.covidComments}
+                  name="covidDate"
+                  value={selectedClient.covidDate}
                   readOnly
                 />
               </div>
@@ -407,6 +411,59 @@ const ClientDetails = () => {
                 <input name="covid" value="No COVID" />
               </div>
             )}
+          </div>
+          <h2>Initial Measurements</h2>
+          <div>
+            <label>Height</label>
+            <input name="height" value={selectedClient.height} readOnly />
+          </div>
+          <div>
+            <label>Weight</label>
+            <input name="weight" value={selectedClient.weight} readOnly />
+          </div>
+          <div>
+            <label>Body Fat</label>
+            <input name="bodyFat" value={selectedClient.bodyFat} readOnly />
+          </div>
+          <div>
+            <label>Water</label>
+            <input name="water" value={selectedClient.water} readOnly />
+          </div>
+          <div>
+            <label>Muscle</label>
+            <input name="muscle" value={selectedClient.muscle} readOnly />
+          </div>
+          <div>
+            <label>Physique</label>
+            <input name="physique" value={selectedClient.physique} readOnly />
+          </div>
+          <div>
+            <label>Metabolic Rate</label>
+            <input
+              name="metabolicRate"
+              value={selectedClient.metabolicRate}
+              readOnly
+            />
+          </div>
+          <div>
+            <label>Metabolic Age</label>
+            <input
+              name="metabolicAge"
+              value={selectedClient.metabolicAge}
+              readOnly
+            />
+          </div>
+          <div>
+            <label>Bone Mass</label>
+            <input name="boneMass" value={selectedClient.boneMass} readOnly />
+          </div>
+          <div>
+            <label>Visceral Fat</label>
+            <input
+              name="visceralFat"
+              value={selectedClient.visceralFat}
+              readOnly
+            />
           </div>
 
           <button type="submit" value="Send">
