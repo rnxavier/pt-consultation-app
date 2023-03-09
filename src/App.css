@@ -141,6 +141,14 @@ form h2 {
   font-size: 1rem;
 }
 
+.client-details-form input {
+  border: none;
+}
+
+.client-details-form label {
+  font-weight: 600;
+}
+
 .submit-btn-text {
   display: flex;
   justify-content: space-evenly;

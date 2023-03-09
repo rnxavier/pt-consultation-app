@@ -2,7 +2,6 @@ import { db } from "../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect, useContext } from "react";
 import Modal from "../Components/Modal";
-import { useNavigate } from "react-router-dom";
 import { ClientContext } from "../Context/ClientContext";
 
 const Clients = () => {

@@ -1,19 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ClientContext } from "../Context/ClientContext";
 import { db } from "../Firebase";
 import { doc, getDoc } from "firebase/firestore";
+import emailjs from "@emailjs/browser";
+import { serviceID, publicID, templateID } from "../secret";
 
-// use context to get client id
-// load client data into form
+// use context to get client id ✅
+// load client data into form ✅
 // use emailjs to email form
 
 const ClientDetails = () => {
   const navigate = useNavigate();
+  const form = useRef();
   const { id } = useContext(ClientContext);
   const [selectedClient, setSelectedClient] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
-  const getClientById = async () => {
+  const handleLoadForm = async () => {
     const docRef = doc(db, "clients", id);
     const docSnap = await getDoc(docRef);
 
@@ -25,6 +29,20 @@ const ClientDetails = () => {
       // doc.data() will be undefined in this case
       console.log("No such document!");
     }
+    setShowForm(true);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(serviceID, templateID, form.current, publicID).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
@@ -38,131 +56,364 @@ const ClientDetails = () => {
       </button>
       <button
         onClick={() => {
-          getClientById();
+          handleLoadForm();
         }}
       >
         load form
       </button>
-      <form>
-        <p>Name: {selectedClient.name}</p>
-        <p>Gender: {selectedClient.gender}</p>
-        <p>D.O.B.: {selectedClient.dob}</p>
-        <p>Contact Number: {selectedClient.contactNo}</p>
-        <p>Email Address: {selectedClient.email}</p>
-        <p>Emergency Contact: {selectedClient.emergencyContact}</p>
-        <p>Emergency Contact Number: {selectedClient.emergencyNo}</p>
-        <p>Main Goals: {selectedClient.goals}</p>
-        <p>Body Parts Focus: {selectedClient.bodyParts}</p>
-        <p>Expect to see results after: {selectedClient.resultsTime}</p>
-        <p>Current Knowledge Level: {selectedClient.knowledge}</p>
-        <p>Motivations: {selectedClient.motivation}</p>
-        <p>Barriers: {selectedClient.barriers}</p>
-        <p>How we can help: {selectedClient.help}</p>
-        {selectedClient.heartCon === "Yes" ? (
+      {showForm && (
+        <form ref={form} onSubmit={sendEmail} className="client-details-form">
           <div>
-            <p>Heart Conditions? {selectedClient.heartCon}</p>
-            <p>{selectedClient.heartConComments}</p>
+            <label>Name</label>
+            <input name="name" value={selectedClient.name} readOnly />
           </div>
-        ) : (
-          <p>No heart conditions</p>
-        )}
-        {selectedClient.chestCon === "Yes" ? (
           <div>
-            <p>Chest pain while exercising? {selectedClient.chestCon}</p>
-            <p>{selectedClient.chestConComments}</p>
+            <label>Gender</label>
+            <input name="gender" value={selectedClient.gender} readOnly />
           </div>
-        ) : (
-          <p>No chest conditions</p>
-        )}
-        {selectedClient.diabetes === "Yes" ? (
           <div>
-            <p>Diabetes? {selectedClient.diabetes}</p>
-            <p>{selectedClient.diabetesComments}</p>
+            <label>DOB</label>
+            <input name="dob" value={selectedClient.dob} readOnly />
           </div>
-        ) : (
-          <p>No diabetes</p>
-        )}
-        {selectedClient.epilepsy === "Yes" ? (
           <div>
-            <p>Epilepsy? {selectedClient.epilepsy}</p>
-            <p>{selectedClient.epilepsyComments}</p>
+            <label>Contact Number</label>
+            <input name="contactNo" value={selectedClient.contactNo} readOnly />
           </div>
-        ) : (
-          <p>No epilepsy</p>
-        )}
-        {selectedClient.muscleCon === "Yes" ? (
           <div>
-            <p>Muscle/joint conditions/injuries{selectedClient.muscleCon}</p>
-            <p>{selectedClient.muscleConComments}</p>
+            <label>Emergency Contact</label>
+            <input
+              name="emergencyContact"
+              value={selectedClient.emergencyContact}
+              readOnly
+            />
           </div>
-        ) : (
-          <p>No muscle conditions</p>
-        )}
-        {selectedClient.neckCon === "Yes" ? (
           <div>
-            <p>Neck/back conditions/injuries{selectedClient.neckCon}</p>
-            <p>{selectedClient.neckConComments}</p>
+            <label>Emergency Contact Number</label>
+            <input
+              name="emergencyNo"
+              value={selectedClient.emergencyNo}
+              readOnly
+            />
           </div>
-        ) : (
-          <p>No neck conditions</p>
-        )}
-        {selectedClient.bloodPressure === "Yes" ? (
           <div>
-            <p>High/low blood pressure? {selectedClient.bloodPressure}</p>
-            <p>{selectedClient.bloodPressureComments}</p>
+            <label>Goals</label>
+            <input name="goals" value={selectedClient.goals} readOnly />
           </div>
-        ) : (
-          <p>No high/low blood pressure</p>
-        )}
-        {selectedClient.dizziness === "Yes" ? (
           <div>
-            <p>Dizziness/loss of consciousness?{selectedClient.dizziness}</p>
-            <p>{selectedClient.dizzinessComments}</p>
+            <label>Body Parts Focus</label>
+            <input name="bodyParts" value={selectedClient.bodyParts} readOnly />
           </div>
-        ) : (
-          <p>No dizziness</p>
-        )}
-        {selectedClient.pregnancy === "Yes" ? (
           <div>
-            <p>Pregnant/recently given birth?{selectedClient.pregnancy}</p>
-            <p>{selectedClient.pregnancyComments}</p>
+            <label>Expect to see results after</label>
+            <input
+              name="resultsTIME"
+              value={selectedClient.resultsTime}
+              readOnly
+            />
           </div>
-        ) : (
-          <p>Not pregnant or recently given birth</p>
-        )}
-        {selectedClient.majorOps === "Yes" ? (
           <div>
-            <p>Major operations?{selectedClient.majorOps}</p>
-            <p>{selectedClient.majorOpsComments}</p>
+            <label>Current Knowledge Level</label>
+            <input name="knowledge" value={selectedClient.knowledge} readOnly />
           </div>
-        ) : (
-          <p>No major operations</p>
-        )}
-        {selectedClient.medication === "Yes" ? (
           <div>
-            <p>Medication{selectedClient.medicationCon}</p>
-            <p>{selectedClient.medicationComments}</p>
+            <label>Motivations</label>
+            <input
+              name="motivations"
+              value={selectedClient.motivation}
+              readOnly
+            />
           </div>
-        ) : (
-          <p>No medication</p>
-        )}
-        {selectedClient.temp === "Yes" ? (
           <div>
-            <p>Temperature &gt 38°C?{selectedClient.temp}</p>
-            <p>{selectedClient.tempComments}</p>
+            <label>Barriers</label>
+            <input name="barriers" value={selectedClient.barriers} readOnly />
           </div>
-        ) : (
-          <p>No temperature</p>
-        )}
-        {selectedClient.covid === "Yes" ? (
           <div>
-            <p>Contracted COVID?{selectedClient.covid}</p>
-            <p>{selectedClient.covidComments}</p>
+            <label>How we can help</label>
+            <input name="help" value={selectedClient.help} readOnly />
           </div>
-        ) : (
-          <p>No COVID</p>
-        )}
-      </form>
+          <div>
+            {selectedClient.heartCon === "Yes" ? (
+              <div>
+                <label>Heart Conditions</label>
+                <input
+                  name="heartCon"
+                  value={selectedClient.heartCon}
+                  readOnly
+                />
+                <input
+                  name="heartConComments"
+                  value={selectedClient.heartConComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Heart Conditions</label>
+                <input name="heartCon" value="No heart condition" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.chestCon === "Yes" ? (
+              <div>
+                <label>Chest Conditions</label>
+                <input
+                  name="chestCon"
+                  value={selectedClient.chestCon}
+                  readOnly
+                />
+                <input
+                  name="chestConComments"
+                  value={selectedClient.chestConComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Chest Conditions</label>
+                <input name="chestCon" value="No chest condition" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.diabetes === "Yes" ? (
+              <div>
+                <label>Diabetes</label>
+                <input
+                  name="diabetes"
+                  value={selectedClient.diabetes}
+                  readOnly
+                />
+                <input
+                  name="diabetesComments"
+                  value={selectedClient.diabetesComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Diabetes</label>
+                <input name="diabetes" value="No diabetes" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.epilepsy === "Yes" ? (
+              <div>
+                <label>Epilepsy</label>
+                <input
+                  name="epilepsy"
+                  value={selectedClient.epilepsy}
+                  readOnly
+                />
+                <input
+                  name="epilepsyComments"
+                  value={selectedClient.epilepsyComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Epilepsy</label>
+                <input name="epilepsy" value="No epilepsy" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.muscleCon === "Yes" ? (
+              <div>
+                <label>Muscle Conditions</label>
+                <input
+                  name="muscleCon"
+                  value={selectedClient.muscleCon}
+                  readOnly
+                />
+                <input
+                  name="muscleConComments"
+                  value={selectedClient.muscleConComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Muscle Conditions</label>
+                <input name="muscleCon" value="No muscle condition" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.neckCon === "Yes" ? (
+              <div>
+                <label>Neck Conditions</label>
+                <input name="neckCon" value={selectedClient.neckCon} readOnly />
+                <input
+                  name="neckConComments"
+                  value={selectedClient.neckConComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Neck Conditions</label>
+                <input name="neckCon" value="No neck condition" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.bloodPressure === "Yes" ? (
+              <div>
+                <label>High/Low Blood Pressure</label>
+                <input
+                  name="bloodPressure"
+                  value={selectedClient.bloodPressure}
+                  readOnly
+                />
+                <input
+                  name="bloodPressureComments"
+                  value={selectedClient.bloodPressureComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>High/Low Blood Pressure</label>
+                <input
+                  name="bloodPressure"
+                  value="No high/low blood pressure"
+                />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.dizziness === "Yes" ? (
+              <div>
+                <label>Dizziness</label>
+                <input
+                  name="dizziness"
+                  value={selectedClient.dizziness}
+                  readOnly
+                />
+                <input
+                  name="dizzinessComments"
+                  value={selectedClient.dizzinessComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Dizziness</label>
+                <input name="dizziness" value="No dizziness" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.pregnancy === "Yes" ? (
+              <div>
+                <label>Pregnancy</label>
+                <input
+                  name="pregnancy"
+                  value={selectedClient.pregnancy}
+                  readOnly
+                />
+                <input
+                  name="pregnancyComments"
+                  value={selectedClient.pregnancyComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Pregnancy</label>
+                <input name="pregnancy" value="No pregnancy" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.majorOps === "Yes" ? (
+              <div>
+                <label>Major Operations</label>
+                <input
+                  name="majorOps"
+                  value={selectedClient.majorOps}
+                  readOnly
+                />
+                <input
+                  name="majorOpsComments"
+                  value={selectedClient.majorOpsComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Major Operations</label>
+                <input name="majorOps" value="No major operations" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.medication === "Yes" ? (
+              <div>
+                <label>Medication</label>
+                <input
+                  name="medication"
+                  value={selectedClient.medication}
+                  readOnly
+                />
+                <input
+                  name="medicationComments"
+                  value={selectedClient.medicationComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Medication</label>
+                <input name="medication" value="No medication" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.temp === "Yes" ? (
+              <div>
+                <label>Temperature</label>
+                <input name="temp" value={selectedClient.temp} readOnly />
+                <input
+                  name="temp"
+                  value={selectedClient.tempComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>Temperature</label>
+                <input name="temp" value="No temperature" />
+              </div>
+            )}
+          </div>
+          <div>
+            {selectedClient.covid === "Yes" ? (
+              <div>
+                <label>COVID</label>
+                <input name="covid" value={selectedClient.covid} readOnly />
+                <input
+                  name="covidComments"
+                  value={selectedClient.covidComments}
+                  readOnly
+                />
+              </div>
+            ) : (
+              <div>
+                <label>COVID</label>
+                <input name="covid" value="No COVID" />
+              </div>
+            )}
+          </div>
+
+          <button type="submit" value="Send">
+            Send email
+          </button>
+        </form>
+      )}
     </div>
   );
 };
