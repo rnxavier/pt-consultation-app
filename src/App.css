@@ -42,7 +42,9 @@
   text-align: center;
 }
 
-.txtb input[type="text"] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   width: 100%;
 }
 
@@ -106,10 +108,6 @@
   font-weight: 500;
 }
 
-/* .forgot-btn:hover {
-  color: #66d3fa;
-} */
-
 .login-password {
   display: flex;
 }
@@ -139,15 +137,6 @@ form h1 {
 form h2 {
   font-weight: 50;
   font-size: 1rem;
-}
-
-.client-details-form input {
-  border: none;
-  width: 100%;
-}
-
-.client-details-form label {
-  font-weight: 600;
 }
 
 .submit-btn-text {
@@ -207,7 +196,6 @@ form h2 {
 @media screen and (max-width: 479px) {
   .button {
     font-size: 0.6rem;
-    /* box-shadow: 0 0 3px #808080; */
   }
 }
 
@@ -226,7 +214,6 @@ form h2 {
 }
 
 .clients-div-btn {
-  /* color: black; */
   color: #333;
   text-transform: uppercase;
 }
@@ -259,12 +246,6 @@ form h2 {
   text-transform: uppercase;
   font-size: 14px;
 }
-
-/* @media screen and (max-width: 1210px) {
-  .first-canvas {
-
-  }
-} */
 
 .signature-pad {
   display: block;
@@ -318,7 +299,6 @@ form h2 {
   grid-template-columns: auto auto auto auto;
   row-gap: 0.5%;
   font-size: 1.2rem;
-  /* text-align: center; */
 }
 
 .modal-grid h2 {
@@ -409,4 +389,47 @@ form h2 {
 
 .right-txt {
   text-align: end;
+}
+
+/* CLIENT DETAILS PAGE */
+.small-button {
+  background: #95c128;
+  padding: 8px 10px;
+  color: #fff;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: #95c128;
+  text-decoration: none;
+  box-shadow: 0 0 10px #808080;
+  text-align: left;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.client-details-form {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.client-details-form input {
+  border: none;
+  width: 100%;
+  font-size: 20px;
+}
+
+.client-details-form label {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.email-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }

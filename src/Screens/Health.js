@@ -38,7 +38,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="heartConComments" onChange={handleText} />
+            <input
+              type="text"
+              name="heartConComments"
+              onChange={handleText}
+              value={formData.heartConComments}
+            />
           </div>
         </div>
 
@@ -62,7 +67,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="chestConComments" onChange={handleText} />
+            <input
+              type="text"
+              name="chestConComments"
+              onChange={handleText}
+              value={formData.chestConComments}
+            />
           </div>
         </div>
 
@@ -86,7 +96,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="diabetesComments" onChange={handleText} />
+            <input
+              type="text"
+              name="diabetesComments"
+              onChange={handleText}
+              value={formData.diabetesComments}
+            />
           </div>
         </div>
 
@@ -110,7 +125,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="epilepsyComments" onChange={handleText} />
+            <input
+              type="text"
+              name="epilepsyComments"
+              onChange={handleText}
+              value={formData.epilepsyComments}
+            />
           </div>
         </div>
 
@@ -134,7 +154,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="muscleComments" onChange={handleText} />
+            <input
+              type="text"
+              name="muscleComments"
+              onChange={handleText}
+              value={formData.muscleComments}
+            />
           </div>
         </div>
 
@@ -158,7 +183,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="neckComments" onChange={handleText} />
+            <input
+              type="text"
+              name="neckComments"
+              onChange={handleText}
+              value={formData.neckComments}
+            />
           </div>
         </div>
 
@@ -186,6 +216,7 @@ const Health = ({ formData, setFormData }) => {
               type="text"
               name="bloodPressureComments"
               onChange={handleText}
+              value={formData.bloodPressureComments}
             />
           </div>
         </div>
@@ -212,7 +243,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="dizzinessComments" onChange={handleText} />
+            <input
+              type="text"
+              name="dizzinessComments"
+              onChange={handleText}
+              value={formData.dizzinessComments}
+            />
           </div>
         </div>
 
@@ -236,7 +272,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="pregnancyComments" onChange={handleText} />
+            <input
+              type="text"
+              name="pregnancyComments"
+              onChange={handleText}
+              value={formData.pregnancyComments}
+            />
           </div>
         </div>
 
@@ -260,7 +301,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="majorOpsComments" onChange={handleText} />
+            <input
+              type="text"
+              name="majorOpsComments"
+              onChange={handleText}
+              value={formData.majorOpsComments}
+            />
           </div>
         </div>
 
@@ -291,6 +337,7 @@ const Health = ({ formData, setFormData }) => {
               type="text"
               name="medicationComments"
               onChange={handleText}
+              value={formData.medicationComments}
             />
           </div>
         </div>
@@ -314,7 +361,12 @@ const Health = ({ formData, setFormData }) => {
           No
           <div className="comments">
             <label>Comments</label>
-            <input type="text" name="tempComments" onChange={handleText} />
+            <input
+              type="text"
+              name="tempComments"
+              onChange={handleText}
+              value={formData.tempComments}
+            />
           </div>
         </div>
         <div className="txtb">

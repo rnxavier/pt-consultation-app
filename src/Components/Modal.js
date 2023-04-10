@@ -15,6 +15,7 @@ const Modal = (props) => {
           <h2>{props.name}</h2>
         </div>
         <button
+          className="button btn-text"
           onClick={() => {
             navigate("/clientDetails");
           }}

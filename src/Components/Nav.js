@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useUserContext } from "../Context/UserContext";
-import logo from "../Screens/bizLogo.PNG";
+import bizLogo from "../Screens/bizLogo.PNG";
+import yourPTLogo from "../Screens/your-pt-logo.png";
+import betterLogo from "./better-logo.jpeg";
 
 const Nav = styled.div`
   padding: 0 2rem 1rem;
@@ -18,6 +20,18 @@ const Nav = styled.div`
     display: flex;
     justify-content: space-between;
   }
+
+  .your-pt-logo {
+    width: 30%;
+    height: 80%;
+    align-self: center;
+  }
+
+  .better-logo {
+    width: 30%;
+    height: 90%;
+    align-self: center;
+  }
 `;
 
 const Logo = styled.a`
@@ -32,7 +46,7 @@ const Logo = styled.a`
   }
 
   img {
-    width: 40%;
+    width: 80%;
     height: 80%;
   }
 `;
@@ -105,9 +119,14 @@ const Navbar = (props) => {
   return (
     <div>
       <Nav>
-        <Logo href="">
-          <img src={logo} alt="logo" />
-        </Logo>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <img src={yourPTLogo} alt="" className="your-pt-logo" />
+          <Logo href="">
+            <img src={bizLogo} alt="logo" />
+          </Logo>
+          <img src={betterLogo} alt="" className="better-logo" />
+        </div>
+
         <Hamburger
           onClick={() => {
             setIsOpen(!isOpen);
